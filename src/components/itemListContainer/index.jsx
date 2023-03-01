@@ -1,5 +1,5 @@
 export default function Contenido ({greeting}){
     return(
-        <p>{greeting}</p>
+        <p style={{ textAlign:"center" }}>{greeting}</p>
     )
 }

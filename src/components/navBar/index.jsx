@@ -7,13 +7,14 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CartWidget from '../cartWidget';
 import './index.css'
+import logo from '../img/logo-malka-redondo.png'
 
 export default function Barra(){
     
     return(
         <Navbar className='background' expand="md">
             <Container fluid>
-                <Navbar.Brand href="#">loguito</Navbar.Brand>
+                <Navbar.Brand href="#"><img src={logo} alt="MALKA" style={{width:"75px"}}/></Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav
