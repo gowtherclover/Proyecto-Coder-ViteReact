@@ -20,11 +20,11 @@ export default function Barra(){
                         className="me-auto my-2 my-lg-0"
                         navbarScroll
                     >
-                        <Nav.Link href="#action1">Inicio</Nav.Link>
+                        <Nav.Link href="#Inicio">Inicio</Nav.Link>
                         <NavDropdown className='mb-2' title="Productos" id="navbarScrollingDropdown">
-                        <NavDropdown.Item href="#action2">Calzas</NavDropdown.Item>
-                        <NavDropdown.Item href="#action3">Bikers</NavDropdown.Item>
-                        <NavDropdown.Item href="#action4">Shorts</NavDropdown.Item>
+                        <NavDropdown.Item href="#Calzas">Calzas</NavDropdown.Item>
+                        <NavDropdown.Item href="#Bikers">Bikers</NavDropdown.Item>
+                        <NavDropdown.Item href="#Shorts">Shorts</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
                     <CartWidget cantidad="3"/>
