@@ -1,0 +1,40 @@
+body {
+    font-family: 'Shantell Sans', cursive;
+    line-height: 1.5;
+    font-weight: 500;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+.NavBar-Lista a{
+font-weight: 300;
+}
+
+.background{
+    background-color: #c7a47c;
+}
+.logo{
+    width: 100px;
+}
+
+.navbar-nav{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+main{background-image:url(../img/fondo.svg);
+    background-repeat:repeat;
+    background-size: cover;
+    background-size:100%}
+
+.card h5{
+    font-size: 1rem;
+}
+
+footer{
+    background-color: #c7a47c;
+}
