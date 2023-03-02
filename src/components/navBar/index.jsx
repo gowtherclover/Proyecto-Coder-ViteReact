@@ -1,5 +1,4 @@
-
-import Container from 'react-bootstrap/Container';
+/* import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
@@ -33,5 +32,23 @@ export default function Barra(){
             </Container>
         </Navbar>
         
+    )
+} */
+import { Button, Drawer } from "@mui/material";
+import { useState } from "react";
+import Lista from "./lista";
+
+export default function Barra(){
+    
+    const [open,setOpen]= useState(false)
+
+    return(
+        <>
+            <Button variant="contained" onClick={()=> setOpen(true)}>Abrir Drawer</Button>
+
+            <Drawer open={open} anchor="left" onClose={()=> setOpen(false)}>
+            <Lista/>
+            </Drawer>
+        </>
     )
 }

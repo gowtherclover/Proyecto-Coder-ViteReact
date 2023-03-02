@@ -1,13 +1,14 @@
-import Barra from './components/navBar'
-import Contenido from './components/itemListContainer'
+import Barra from './components/NavBar'
+import Contenido from './components/ItemListContainer'
+import { Container } from '@mui/material'
 
 function App() {
 
   return (
-    <div>
+    <Container>
       <Barra/>
       <Contenido greeting="Futuro contenido"/>
-    </div>
+    </Container>
   )
 }
 
