@@ -1,10 +1,10 @@
 import { Card, CardMedia, CardContent, Typography, CardActions, Button, CardActionArea } from "@mui/material"
 
-export default function Tarjeta({Productos}){
+export default function ItemCard({products}){
 
     return(
         <>
-        {Productos.map((product)=>{
+        {products.map((datos)=>{
             <Card sx={{mt:3,width:250}} elevation="8">
                 <CardActionArea>
                     <CardMedia 
@@ -14,7 +14,7 @@ export default function Tarjeta({Productos}){
                         alt="Descripcion de la foto"
                     />
                     <CardContent sx={{textAlign:"center"}}>
-                        <Typography variant="h5" key={product.id}>{product.tipo}</Typography>
+                        <Typography variant="h5" key={datos.id}>{datos.tipo}</Typography>
                         <Typography
                             component="p"
                             variant="body2"

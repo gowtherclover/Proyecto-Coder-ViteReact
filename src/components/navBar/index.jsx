@@ -34,9 +34,32 @@ export default function Barra(){
         
     )
 } */
-import { Button, Drawer } from "@mui/material";
+import { AppBar, Button, Drawer, IconButton, Toolbar, Typography } from "@mui/material";
 import { useState } from "react";
 import Lista from "./lista";
+import MenuIcon from '@mui/icons-material/Menu';
+import HomeIcon from '@mui/icons-material/Home';
+import CheckroomIcon from '@mui/icons-material/Checkroom';
+import LoginIcon from '@mui/icons-material/Login';
+import { Box } from "@mui/system";
+
+const navLinks=[
+    {
+        title:"Inicio",
+        path:"#Inicio",
+        icon:<HomeIcon/>,
+    },
+    {
+        title:"Productos",
+        path:"#Productos",
+        icon:<CheckroomIcon/>,
+    },
+    {
+        title:"Login",
+        path:"#Login",
+        icon:<LoginIcon/>,
+    },
+]
 
 export default function Barra(){
     
@@ -44,10 +67,43 @@ export default function Barra(){
 
     return(
         <>
-            <Button variant="contained" onClick={()=> setOpen(true)}>Abrir Drawer</Button>
+            <AppBar position="fixed">
+                <Toolbar>
+                    <IconButton 
+                        color="inherit" 
+                        size="large" 
+                        onClick={()=> setOpen(true)}
+                        sx={{display:{xs:"flex",sm:"none"}}}
+                    >
+                    <MenuIcon/>
+                    </IconButton>
+                    <Typography 
+                        variant="h6" 
+                        sx={{flexGrow:1}}
+                    >
+                        MALKA
+                    </Typography>
+                    <Box
+                        sx={{display:{xs:"none",sm:"block"}}}
+                    >
+                        {
+                            navLinks.map(item=>(
+                                <Button 
+                                    color="inherit" 
+                                    key={item.title}
+                                    component="a"
+                                    href={item.path}
+                                >
+                                    {item.title}
+                                </Button>
+                            ))
+                        }
+                    </Box>
+                </Toolbar>
+            </AppBar>
 
-            <Drawer open={open} anchor="left" onClose={()=> setOpen(false)}>
-            <Lista/>
+            <Drawer open={open} anchor="left" onClose={()=> setOpen(false)} sx={{display:{xs:"flex",sm:"none"}}}>
+                <Lista navLinks={navLinks}/>
             </Drawer>
         </>
     )
