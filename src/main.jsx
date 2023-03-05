@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.css'
 
-const theme = createTheme({
+/* const theme = createTheme({
   palette: {
     primary: {
       light: '#d2b696',
@@ -19,13 +19,13 @@ const theme = createTheme({
       contrastText: '#fff',
     },
   },
-});
+}); */
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
+    {/* <ThemeProvider theme={theme}> */}
       <CssBaseline/>
       <App />
-    </ThemeProvider>
+    {/* </ThemeProvider> */}
   </React.StrictMode>,
 )
