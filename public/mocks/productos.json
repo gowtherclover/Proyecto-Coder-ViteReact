@@ -1,0 +1,173 @@
+[
+    {
+        "id":1,
+        "tipo":"Calza",
+        "img":"/assets/img/calzas/calza-amarilla.png",
+        "color":"Amarilla",
+        "talle":"S",
+        "precio":5200
+        
+    },
+    {
+        "id":2,
+        "tipo":"Calza",
+        "img":"/assets/img/calzas/calza-celeste.png",
+        "color":"Celeste",
+        "talle":"M",
+        "precio":5200
+        
+    },
+    {
+        "id":3,
+        "tipo":"Calza",
+        "img":"/assets/img/calzas/calza-rosa.png",
+        "color":"Rosa",
+        "talle":"XL",
+        "precio":5200
+        
+    },
+    {
+        "id":4,
+        "tipo":"Calza",
+        "img":"/assets/img/calzas/calza-negra.png",
+        "color":"Negra",
+        "talle":"L",
+        "precio":5200
+        
+    },
+    {
+        "id":5,
+        "tipo":"Short",
+        "img":"/assets/img/shorts/conjunto-amarillo.png",
+        "color":"Amarillo",
+        "talle":"S",
+        "precio":6500
+        
+    },
+    {
+        "id":6,
+        "tipo":"Short",
+        "img":"/assets/img/shorts/conjunto-azul.png",
+        "color":"Azul",
+        "talle":"L",
+        "precio":6500
+        
+    },
+    {
+        "id":7,
+        "tipo":"Short",
+        "img":"/assets/img/shorts/conjunto-lila.png",
+        "color":"Lila",
+        "talle":"XL",
+        "precio":6500
+        
+    },
+    {
+        "id":8,
+        "tipo":"Short",
+        "img":"/assets/img/shorts/conjunto-rojo.png",
+        "color":"Rojo",
+        "talle":"M",
+        "precio":6500
+        
+    },
+    {
+        "id":9,
+        "tipo":"Biker",
+        "img":"/assets/img/bikers/biker-blanco.png",
+        "color":"Blanco",
+        "talle":"M",
+        "precio":4200
+        
+    },
+    {
+        "id":10,
+        "tipo":"Biker",
+        "img":"/assets/img/bikers/biker-celeste-1.png",
+        "color":"Celeste",
+        "talle":"XS",
+        "precio":4200
+        
+    },
+    {
+        "id":11,
+        "tipo":"Biker",
+        "img":"/assets/img/bikers/biker-lila.png",
+        "color":"Lila",
+        "talle":"L",
+        "precio":4200
+        
+    },
+    {
+        "id":12,
+        "tipo":"Biker",
+        "img":"/assets/img/bikers/biker-manchas.png",
+        "color":"Print",
+        "talle":"M",
+        "precio":4200
+        
+    },
+    {
+        "id":13,
+        "tipo":"Biker",
+        "img":"/assets/img/bikers/biker-negro.png",
+        "color":"Negro",
+        "talle":"XL",
+        "precio":4200
+        
+    },
+    {
+        "id":14,
+        "tipo":"Biker",
+        "img":"/assets/img/bikers/biker-rosa.png",
+        "color":"Rosa",
+        "talle":"XS",
+        "precio":4200
+        
+    },
+    {
+        "id":15,
+        "tipo":"Capri",
+        "img":"/assets/img/capris/capri-azul.png",
+        "color":"Azul",
+        "talle":"XS",
+        "precio":5900
+        
+    },
+    {
+        "id":16,
+        "tipo":"Capri",
+        "img":"/assets/img/capris/capri-blanco.png",
+        "color":"Blanco",
+        "talle":"M",
+        "precio":5900
+        
+    },
+    {
+        "id":17,
+        "tipo":"Capri",
+        "img":"/assets/img/capris/capri-celeste.png",
+        "color":"Celeste",
+        "talle":"L",
+        "precio":5900
+        
+    },
+    {
+        "id":18,
+        "tipo":"Capri",
+        "img":"/assets/img/capris/capri-negro.png",
+        "color":"Negro",
+        "talle":"XL",
+        "precio":5900
+        
+    },
+    {
+        "id":19,
+        "tipo":"Capri",
+        "img":"/assets/img/capris/capri-rosa.png",
+        "color":"Rosa",
+        "talle":"XS",
+        "precio":5900
+        
+    }
+]

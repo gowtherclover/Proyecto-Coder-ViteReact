@@ -5,19 +5,34 @@ import { HiOutlineMenu,HiOutlineX,HiHome,HiUserCircle } from "react-icons/hi";
 import { GiClothes } from "react-icons/gi";
 import { SlSocialFacebook,SlSocialInstagram } from "react-icons/sl";
 import { ImWhatsapp } from "react-icons/im";
-import Logo from '../../assets/img/logo-malka.png'
+import { NavLink } from 'react-router-dom';
+import Logo from '/assets/img/logo-malka.png'
 
 export default function Barra() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
+    const [verNav,setVerNav]=useState("show")
     const [buscar,setBuscar]=useState('')
 
     const handleChange = (event) => {
         setBuscar(event.target.value);
     }
 
+    let scrollPosc = window.pageYOffset;
+    useEffect(()=>{
+        window.onscroll = function() {
+            let actualScrollPosc = window.pageYOffset;
+            if (scrollPosc > actualScrollPosc) {
+                setVerNav("show")
+            } else {
+                setVerNav("hidden")
+            }
+            scrollPosc = actualScrollPosc
+        } 
+    },[])
+    
+
     return (
-    <div className="isolate bg-white">
+    <div className={`isolate bg-white fixed inset-x-0 top-0 ${verNav} z-10`}>
         <div className='bg-primario-500 px-6 pt-3 lg:px-8 hidden lg:flex lg:justify-between'>
             <div className='flex justify-between w-28 text-white'>
                 <a href="#facebook"><SlSocialFacebook className='h-6 w-6'/></a>
@@ -71,13 +86,16 @@ export default function Barra() {
                                 <div className="px-1 py-1 ">
                                     <Menu.Item>
                                         {({ active }) => (
-                                            <button
-                                                className={`${
-                                                active ? 'bg-violet-500 text-white' : 'text-gray-900'
-                                                } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                                            >
+                                            <NavLink to={'/category/Calza'}>
+                                                <button
+                                                    className={`${
+                                                    active ? 'bg-violet-500 text-white' : 'text-gray-900'
+                                                    } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                                                >
                                                 Edit
-                                            </button>
+                                                </button>
+                                            </NavLink>
+                                            
                                         )}
                                     </Menu.Item>
                                     <Menu.Item>
@@ -134,10 +152,8 @@ export default function Barra() {
                     </Menu>
                     
                 </div>
-                
-                
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <input className="block w-60 bg-gray-300 py-4 pl-4 pr-12 text-slate-900 placeholder:text-slate-600 sm:text-sm sm:leading-6" placeholder="Buscar..." aria-label="Buscar ropa" type="text" value={buscar} onChange={handleChange}/>
+                    <input className=" rounded-full block w-60 bg-gray-300 py-4 pl-4 pr-12 text-slate-900 placeholder:text-slate-600 sm:text-sm sm:leading-6" placeholder="Buscar..." aria-label="Buscar ropa" type="text" value={buscar} onChange={handleChange}/>
                 </div>
             </nav>
             {/* Modo movil */}
@@ -212,6 +228,9 @@ export default function Barra() {
                     </Menu>
 
                     </div>
+                    <div className='pb-4 border-none'>
+                        <input className="rounded-full block w-full bg-gray-300 py-4 pl-4 pr-12 text-slate-900 placeholder:text-slate-600 sm:text-sm sm:leading-6" placeholder="Buscar..." aria-label="Buscar ropa" type="text" value={buscar} onChange={handleChange}/>
+                    </div>
                     <div className="py-6">
                         <a
                         href="#"
@@ -225,7 +244,7 @@ export default function Barra() {
                 </Dialog.Panel>
             </Dialog>
         </div>
-        <hr className='border-gray-600'/>
+        <hr className='border-gray-400'/>
     </div>
     )
 }

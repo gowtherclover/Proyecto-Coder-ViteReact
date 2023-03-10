@@ -1,33 +1,29 @@
 import { useEffect, useState } from "react"
-import Productos from "../../mocks/productos.json"
 import ItemCard from "../ItemList"
 
-export default function Contenido ({greeting}){
+export default function Contenido ({greeting,categoryId,isCategoryRoute}){
 
     const [products,setProducts]=useState([])
 
     useEffect(()=>{
-            fetch(`http://localhost:5173/src/mocks/productos.json`)
+        setTimeout(()=>{
+            fetch(`/mocks/productos.json`)
                 .then((res)=>res.json())
-                .then((res)=>setTimeout(() => {setProducts(res)}, 3000))
+                .then((data)=>{
+                    if (isCategoryRoute) {
+                        const productsFiltered = data.filter(
+                            (product)=>product.tipo == categoryId)
+                            setProducts(productsFiltered)
+                    }
+                    else{setProducts(data)}
+                    
+                })
                 .catch((error)=>console.log(error))
-    },[]) 
-    /* useEffect(()=>{
-            array = new Promise((resolve, reject) => {
-                setTimeout(() => {resolve(Productos)}, 2000);
-            });
-
-            array
-            .then((data) => setProducts(data))
-            .catch((error) => console.log(error));
-    }) */
-
+        },2000)
+            
+    },[categoryId]) 
     return(
-        <main className="fondo container-fluid">
-            <p>container</p>
-            <p>container</p>
-            <p>container</p>
-            <p>container</p>
+        <main className="bg-terciario-100 container-fluid pb-8 pt-16 lg:pt-32">
             <ItemCard productos={products}/>
         </main>
     )
