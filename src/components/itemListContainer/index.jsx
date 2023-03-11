@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import ItemCard from "../ItemList"
 
-export default function Contenido ({greeting,categoryId,isCategoryRoute}){
+export default function ItemListContainer ({IDcategoria,isRoute}){
 
     const [products,setProducts]=useState([])
 
@@ -10,9 +10,10 @@ export default function Contenido ({greeting,categoryId,isCategoryRoute}){
             fetch(`/mocks/productos.json`)
                 .then((res)=>res.json())
                 .then((data)=>{
-                    if (isCategoryRoute) {
+                    if (isRoute) {
                         const productsFiltered = data.filter(
-                            (product)=>product.tipo == categoryId)
+                            (product)=>product.tipo == IDcategoria)
+                            
                             setProducts(productsFiltered)
                     }
                     else{setProducts(data)}
@@ -21,7 +22,7 @@ export default function Contenido ({greeting,categoryId,isCategoryRoute}){
                 .catch((error)=>console.log(error))
         },2000)
             
-    },[categoryId]) 
+    },[IDcategoria]) 
     return(
         <main className="bg-terciario-100 container-fluid pb-8 pt-16 lg:pt-32">
             <ItemCard productos={products}/>

@@ -3,8 +3,8 @@
         "id":1,
         "tipo":"Calza",
         "img":"/assets/img/calzas/calza-amarilla.png",
-        "color":"Amarilla",
-        "talle":"S",
+        "modelo":"Strike",
+        "descripcion":"Esta calza de mujer negra con detalles amarillos es perfecta para cualquier actividad deportiva. Confeccionada con materiales de alta calidad, es resistente y cómoda al mismo tiempo. Los detalles amarillos en la parte inferior de las piernas le dan un toque de estilo y modernidad, mientras que su diseño ajustado se adapta perfectamente a su cuerpo, requiere una mayor libertad de movimiento. Además, cuenta con una cintura alta que ayuda a mantener todo en su lugar y acentúa tus curvas. Ya sea para correr, hacer yoga o entrenar en el gimnasio, esta calza será tu compañera ideal para llevar a cabo tu rendimiento al siguiente nivel.",
         "precio":5200
         
     },
@@ -12,8 +12,8 @@
         "id":2,
         "tipo":"Calza",
         "img":"/assets/img/calzas/calza-celeste.png",
-        "color":"Celeste",
-        "talle":"M",
+        "modelo":"Skyline",
+        "descripcion":"¡Te presentamos nuestras nuevas calzas deportivas de mujer modelo azul cielo! Estos leggings son el complemento perfecto para tu guardarropa de entrenamiento. Confeccionados con material elástico de alta calidad, brindan la máxima comodidad y soporte durante cualquier tipo de ejercicio. El hermoso modelo azul cielo seguramente te hará destacar en el gimnasio o en una carrera matutina. El diseño es elegante y ajustado, realza tus curvas y te da la confianza para hacer frente a cualquier entrenamiento. Ya sea que vayas a la sala de pesas o vayas a correr, estas mallas te mantendrán luciendo y sintiéndote genial. ¡No dejes que la ropa de entrenamiento aburrida te detenga, mejora tu ropa deportiva con nuestros leggings azul cielo hoy!",
         "precio":5200
         
     },
@@ -21,8 +21,8 @@
         "id":3,
         "tipo":"Calza",
         "img":"/assets/img/calzas/calza-rosa.png",
-        "color":"Rosa",
-        "talle":"XL",
+        "modelo":"Pink Power",
+        "descripcion":"XL",
         "precio":5200
         
     },
@@ -30,44 +30,44 @@
         "id":4,
         "tipo":"Calza",
         "img":"/assets/img/calzas/calza-negra.png",
-        "color":"Negra",
-        "talle":"L",
+        "modelo":"Wild Spots",
+        "descripcion":"La calza Wild Spots presenta un estampado vibrante y lleno de energía. Con manchas de color gris y amarillo, esta prenda te garantiza un look moderno y desenfadado. Su diseño ajustado se adapta a tu figura para brindarte la máxima comodidad y libertad de movimiento durante tus entrenamientos o actividades diarias. El tejido suave y elástico de alta calidad te proporciona una sensación de suavidad y frescura en la piel, mientras que su cintura elástica se ajusta perfectamente a tu cintura para brindarte un ajuste seguro. Con la calza Wild Spots, puedes estar segura de que lucirás a la moda y cómoda al mismo tiempo.",
         "precio":5200
         
     },
     {
         "id":5,
-        "tipo":"Short",
+        "tipo":"Conjunto",
         "img":"/assets/img/shorts/conjunto-amarillo.png",
-        "color":"Amarillo",
-        "talle":"S",
+        "modelo":"Neon Sunburst",
+        "descripcion":"El conjunto Neon Sunburst es una explosión de energía y vitalidad que no te dejará pasar desapercibida. Confeccionado en un vibrante tono amarillo fluorescente, este conjunto de short y top es perfecto para aquellas mujeres que quieren lucir un estilo moderno y desenfadado. El top presenta un diseño ajustado que realza la figura, con un escote redondo y tirantes anchos que brindan un soporte cómodo y seguro. El short, por su parte, cuenta con un corte tipo bermuda que no limita tus movimientos y una cintura elástica que se ajusta perfectamente a tu cuerpo. El tejido de alta calidad es suave y fresco al tacto, perfecto para tus actividades diarias o entrenamientos intensos. Con el conjunto Neon Sunburst, podrás irradiar confianza y estilo en cualquier ocasión.",
         "precio":6500
         
     },
     {
         "id":6,
-        "tipo":"Short",
+        "tipo":"Conjunto",
         "img":"/assets/img/shorts/conjunto-azul.png",
-        "color":"Azul",
-        "talle":"L",
+        "modelo":"Ocean Bloom",
+        "descripcion":"El conjunto Ocean Bloom es una opción refrescante y moderna para las mujeres que buscan un estilo juvenil y cómodo. El top, de color azul oscuro, presenta un diseño holgado y fresco que aporta libertad de movimiento y comodidad. El escote redondo es sencillo y clásico, ideal para lucir un estilo casual y moderno. El short, por su parte, está confeccionado en un suave tejido de color azul, con detalles en rosa que lo hacen más atractivo y juvenil. Su diseño clásico y cómodo se adapta a la cintura y destaca las piernas, brindando un aspecto fresco y juvenil. La combinación de tonos azul y rosa es armoniosa y evoca la imagen del mar y las flores, creando un estilo fresco y natural. El nombre Ocean Bloom sugiere un estilo relajado y fresco, ideal para disfrutar de tus actividades al aire libre o para un día de playa. Este conjunto es perfecto para lucir un estilo casual y moderno, sin sacrificar la comodidad y la elegancia. ¡Atrévete a lucir fresca y juvenil con el conjunto Ocean Bloom!",
         "precio":6500
         
     },
     {
         "id":7,
-        "tipo":"Short",
-        "img":"/assets/img/shorts/conjunto-lila.png",
-        "color":"Lila",
-        "talle":"XL",
+        "tipo":"Conjunto",
+        "img":"/assets/img/shorts/conjunto-milka.png",
+        "modelo":"Milka",
+        "descripcion":"Este conjunto es una opción moderna y aumentada para mujeres que buscan un estilo fresco y vibrante. El top, de color blanco, tiene un diseño sencillo y elegante, con un escote redondo que destaca la zona del cuello y los hombros. Su tejido es suave y confortable, ideal para disfrutar de tus actividades diarias con comodidad. El short, por su parte, está confeccionado en un tejido gris con franjas lila, que le aportan un toque de color y vitalidad. Su diseño es moderno y juvenil, con un corte recto y cómodo que se adapta al cuerpo sin ajustarlo demasiado. La combinación de blanco, gris y lila crea un estilo equilibrado y sofisticado, con un toque de vitalidad y frescura. Este conjunto es perfecto para lucir en cualquier ocasión casual, ya sea un día de paseo o una tarde de compras. además, su diseño versátil permite combinarlo con diversos accesorios y calzado, para crear diferentes looks según la ocasión. En resumen, este conjunto de top blanco y short gris con franjas lila es una opción fresca y moderna, que aporta comodidad, estilo y vitalidad a tu guardarropa.",
         "precio":6500
         
     },
     {
         "id":8,
-        "tipo":"Short",
+        "tipo":"Conjunto",
         "img":"/assets/img/shorts/conjunto-rojo.png",
-        "color":"Rojo",
-        "talle":"M",
+        "modelo":"Night Fire",
+        "descripcion":"Este conjunto deportivo de mujer está diseñado para mantener el estilo y la comodidad en todo momento. El top negro de tirantes anchos ofrece un soporte óptimo durante cualquier actividad física, mientras que el short rojo con detalles en gris proporciona una gran libertad de movimiento. El material de alta calidad es suave al tacto y transpirable, lo que mantiene la piel fresca y seca incluso durante los entrenamientos más intensos. El diseño elegante y moderno de este conjunto deportivo lo convierte en una excelente opción para cualquier actividad deportiva, desde el gimnasio hasta el campo de entrenamiento. Además, su combinación de colores negro, rojo y gris lo hace muy versátil y fácil de combinar con otros accesorios deportivos. ¡Este conjunto es una excelente elección para las mujeres que buscan comodidad y estilo en su ropa deportiva!",
         "precio":6500
         
     },
@@ -75,8 +75,8 @@
         "id":9,
         "tipo":"Biker",
         "img":"/assets/img/bikers/biker-blanco.png",
-        "color":"Blanco",
-        "talle":"M",
+        "modelo":"Black Ice",
+        "descripcion":"Las calzas biker para mujer en negro, blanco y gris. Diseñados con la moda y la funcionalidad en mente, estos leggings son perfectos para cualquier mujer activa que quiera verse y sentirse bien mientras hace ejercicio. Confeccionados con tela elástica de alta calidad, estos leggings brindan la máxima comodidad y flexibilidad, lo que le permite moverse libremente sin restricciones. El elegante esquema de Black Ice es perfecto para combinar con cualquier parte superior o accesorio, lo que lo convierte en una adición versátil a tu guardarropa. Con una cinturilla de talle alto y un diseño ceñido y favorecedor, estos leggings abrazarán tus curvas y brindarán un ajuste cómodo y seguro. Ya sea que esté yendo al gimnasio o haciendo tu vida diaria, estas calzas se mantendrán al día con tu estilo de vida activo mientras te mantienen elegante y cómodo. Entonces, ¿por qué esperar? ¡Agreguelos a su colección hoy y experimente lo último en comodidad y estilo!",
         "precio":4200
         
     },
@@ -84,89 +84,80 @@
         "id":10,
         "tipo":"Biker",
         "img":"/assets/img/bikers/biker-celeste-1.png",
-        "color":"Celeste",
-        "talle":"XS",
+        "modelo":"Sky Camo",
+        "descripcion":"¡Prepárate para destacarte en tus entrenamientos con nuestra calza biker para mujer en camuflaje celeste y blanco! Esta prenda es perfecta para las mujeres activas que buscan un estilo único y atractivo mientras hacen ejercicio. Confeccionada con tela de alta calidad y un diseño de cintura alta, esta calza biker se ajusta perfectamente a tu cuerpo, brindándote la comodidad y la libertad de movimiento que necesitas. Además, su estampado de camuflaje en tonos celeste y blanco te resaltará del resto de las mujeres en el gimnasio. Ya sea que estés corriendo, haciendo yoga o levantando pesas, esta calza biker te mantendrá fresca y cómoda durante todo el día. ¡No esperes más para darle un toque de estilo a tus entrenamientos y consigue tu calza biker celeste camuflaje y blanco hoy mismo!",
         "precio":4200
         
     },
     {
         "id":11,
         "tipo":"Biker",
-        "img":"/assets/img/bikers/biker-lila.png",
-        "color":"Lila",
-        "talle":"L",
+        "img":"/assets/img/bikers/biker-manchas.png",
+        "modelo":"Wild Ride",
+        "descripcion":"¡Siente la fuerza de la naturaleza con nuestra calza biker con estampado animal print! Esta prenda es perfecta para las mujeres que buscan un estilo salvaje y atrevido en su ropa deportiva. Confeccionada con tela de alta calidad y un diseño de cintura alta, esta calza biker se ajusta perfectamente a tu cuerpo, brindándote la comodidad y la libertad de movimiento que necesitas para tus entrenamientos más intensos. Además, su estampado animal print en tonos marrones y verdaderos negros te hará sentir como una reina de la selva mientras haces ejercicio. Ya sea que estés corriendo, haciendo yoga o levantando pesas, esta calza biker te mantendrá fresca y cómoda durante todo el día. ¡Únete a la manada y consigue tu Wild Ride Calza Biker hoy mismo!",
         "precio":4200
         
     },
     {
         "id":12,
         "tipo":"Biker",
-        "img":"/assets/img/bikers/biker-manchas.png",
-        "color":"Print",
-        "talle":"M",
+        "img":"/assets/img/bikers/biker-negro.png",
+        "modelo":"Floral Noir",
+        "descripcion":"Agrega un toque de elegancia a tus entrenamientos con nuestra calza biker negra con detalles de flores blancas. Esta prenda es perfecta para las mujeres que buscan un estilo sofisticado y femenino en su ropa deportiva. Confeccionada con tela de alta calidad y un diseño de cintura alta, esta calza biker se ajusta perfectamente a tu cuerpo, brindándote la comodidad y la libertad de movimiento que necesitas para tus entrenamientos más intensos. Además, sus detalles de flores blancas en la parte inferior de las piernas le dan un toque de frescura y elegancia a la calza biker. Ya sea que estés corriendo, haciendo yoga o levantando pesas, esta calza biker te mantendrá fresca y cómoda durante todo el día. ¡Agrega un toque floral a tus entrenamientos y consigue tu Floral Noir Calza Biker hoy mismo!",
         "precio":4200
         
     },
     {
         "id":13,
         "tipo":"Biker",
-        "img":"/assets/img/bikers/biker-negro.png",
-        "color":"Negro",
-        "talle":"XL",
+        "img":"/assets/img/bikers/biker-rosa.png",
+        "modelo":"Rose Flower",
+        "descripcion":"¡Demuestra tu fuerza y ​​energía con nuestra calza biker rosa liso! Esta prenda es perfecta para las mujeres que buscan un estilo vibrante y lleno de energía en su ropa deportiva. Confeccionada con tela de alta calidad y un diseño de cintura alta, esta calza biker se ajusta perfectamente a tu cuerpo, brindándote la comodidad y la libertad de movimiento que necesitas para tus entrenamientos más intensos. El color rosa liso le da un toque de frescura y vitalidad a la calza biker, haciéndote resaltar en cualquier lugar donde te encuentres. Ya sea que estés corriendo, haciendo yoga o levantando pesas, esta calza biker te mantendrá fresca y cómoda durante todo el día. ¡Atrévete a ser diferente y consigue tu Pink Power Calza Biker hoy mismo!",
         "precio":4200
         
     },
     {
         "id":14,
-        "tipo":"Biker",
-        "img":"/assets/img/bikers/biker-rosa.png",
-        "color":"Rosa",
-        "talle":"XS",
-        "precio":4200
+        "tipo":"Capri",
+        "img":"/assets/img/capris/capri-azul.png",
+        "modelo":"Blue Stripes",
+        "descripcion":"Nuestro Capri Blue Stripes es el equilibrio perfecto entre estilo y comodidad. Confeccionada con tela de alta calidad y un diseño de cintura alta, esta capri se ajusta perfectamente a tu cuerpo, brindándote la comodidad y la libertad de movimiento que necesitas para tus entrenamientos más intensos. Sus franjas rosas en los muslos le dan un toque de frescura y vitalidad a la capri, haciéndote resaltar en cualquier lugar donde te encuentres. El color azul es elegante y versátil, lo que significa que puedes combinarlo con una variedad de prendas deportivas para crear diferentes looks. Ya sea que estés corriendo, haciendo yoga o levantando pesas, esta capri te mantendrá fresca y cómoda durante todo el día. ¡Agrega un toque de estilo a tus entrenamientos y consigue tu Blue Stripes Capri hoy mismo!",
+        "precio":5900
         
     },
     {
         "id":15,
         "tipo":"Capri",
-        "img":"/assets/img/capris/capri-azul.png",
-        "color":"Azul",
-        "talle":"XS",
+        "img":"/assets/img/capris/capri-blanco.png",
+        "modelo":"Floral Fusion",
+        "descripcion":"Nuestra Floral Fusion Capri es la combinación perfecta entre estilo y confort. Con un diseño de estampado floral único, donde las flores están rellenadas con líneas blancas y negras, esta capri es perfecta para las mujeres que buscan un estilo fresco y vibrante en su ropa deportiva. Confeccionada con tela de alta calidad y un diseño de cintura alta, esta capri se ajusta perfectamente a tu cuerpo, brindándote la comodidad y la libertad de movimiento que necesitas para tus entrenamientos más intensos. El diseño floral es elegante y femenino, lo que significa que puedes combinarlo con una variedad de prendas deportivas para crear diferentes looks. Ya sea que estés corriendo, haciendo yoga o levantando pesas, esta capri te mantendrá fresca y cómoda durante todo el día.",
         "precio":5900
         
     },
     {
         "id":16,
         "tipo":"Capri",
-        "img":"/assets/img/capris/capri-blanco.png",
-        "color":"Blanco",
-        "talle":"M",
+        "img":"/assets/img/capris/capri-celeste.png",
+        "modelo":"White Sky",
+        "descripcion":"Esta capri de color celeste presenta un degradado suave hacia el blanco en la parte inferior, creando un efecto de nubes en el cielo. Su diseño sencillo pero elegante te permitirá lucir cómoda y a la moda mientras realizas tus actividades físicas. La tela suave y transpirable te mantendrá fresca y seca durante todo el día, mientras que su ajuste perfecto te brindará libertad de movimiento. Combínala con una camiseta blanca o celeste para un look fresco y relajado.",
         "precio":5900
         
     },
     {
         "id":17,
         "tipo":"Capri",
-        "img":"/assets/img/capris/capri-celeste.png",
-        "color":"Celeste",
-        "talle":"L",
+        "img":"/assets/img/capris/capri-negro.png",
+        "modelo":"Inkblot",
+        "descripcion":"Nuestra Inkblot Capri es el complemento perfecto para las mujeres que buscan un estilo único y audaz en su ropa deportiva. Con un diseño de manchas en tonos blanco y negro, esta capri es elegante y moderna, y se convertirá en tu nueva favorita para el gimnasio o para cualquier actividad deportiva. Confeccionada con tela de alta calidad y un diseño de cintura alta, esta capri se ajusta perfectamente a tu cuerpo, brindándote la comodidad y la libertad de movimiento que necesitas para tus entrenamientos más intensos. El diseño de manchas en tonos blanco y negro es llamativo y fácil de combinar con otras prendas deportivas, lo que significa que puedes crear diferentes looks para cada entrenamiento.",
         "precio":5900
         
     },
     {
         "id":18,
         "tipo":"Capri",
-        "img":"/assets/img/capris/capri-negro.png",
-        "color":"Negro",
-        "talle":"XL",
-        "precio":5900
-        
-    },
-    {
-        "id":19,
-        "tipo":"Capri",
         "img":"/assets/img/capris/capri-rosa.png",
-        "color":"Rosa",
-        "talle":"XS",
+        "modelo":"Wild Roses",
+        "descripcion":"Esta capri negra presenta pequeños detalles rosas y un estampado de animal print blanco y negro que le da un toque salvaje. Perfecta para un entrenamiento intenso o una salida casual. La tela de alta calidad te mantendrá cómoda y fresca, mientras que el diseño único te hará destacar en cualquier lugar. Combínala con una camiseta negra o rosa para un look completo y atrevido.",
         "precio":5900
         
     }

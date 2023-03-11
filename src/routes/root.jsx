@@ -1,16 +1,18 @@
 import Barra from '../components/NavBar'
-import Contenido from '../components/ItemListContainer'
+import ItemListContainer from '../components/ItemListContainer'
+import Footer from '../components/footer'
+
 import { useParams } from 'react-router-dom'
 
 function Root() {
   const params = useParams()
-  const isCategoryRoute = Boolean (params.id)
-
+  const isRoute = Boolean (params.id)
+  
   return (
     <>
       <Barra/>
-      
-      <Contenido greeting="Futuro contenido" isCategoryRoute={isCategoryRoute} categoryId={params.id}/>
+      <ItemListContainer isRoute={isRoute} IDcategoria={params.id}/>
+      <Footer/>
     </>
   )
 }

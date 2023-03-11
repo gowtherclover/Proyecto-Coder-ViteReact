@@ -1,4 +1,5 @@
 import CartWidget from '../cartWidget';
+
 import { Fragment, useEffect, useRef, useState } from 'react'
 import { Dialog,Menu,Transition  } from '@headlessui/react'
 import { HiOutlineMenu,HiOutlineX,HiHome,HiUserCircle } from "react-icons/hi";
@@ -6,6 +7,7 @@ import { GiClothes } from "react-icons/gi";
 import { SlSocialFacebook,SlSocialInstagram } from "react-icons/sl";
 import { ImWhatsapp } from "react-icons/im";
 import { NavLink } from 'react-router-dom';
+
 import Logo from '/assets/img/logo-malka.png'
 
 export default function Barra() {
@@ -13,11 +15,14 @@ export default function Barra() {
     const [verNav,setVerNav]=useState("show")
     const [buscar,setBuscar]=useState('')
 
+    const categorias=['Calza','Conjunto','Biker','Capri'];
+
     const handleChange = (event) => {
         setBuscar(event.target.value);
     }
 
     let scrollPosc = window.pageYOffset;
+
     useEffect(()=>{
         window.onscroll = function() {
             let actualScrollPosc = window.pageYOffset;
@@ -29,17 +34,17 @@ export default function Barra() {
             scrollPosc = actualScrollPosc
         } 
     },[])
-    
+
 
     return (
     <div className={`isolate bg-white fixed inset-x-0 top-0 ${verNav} z-10`}>
-        <div className='bg-primario-500 px-6 pt-3 lg:px-8 hidden lg:flex lg:justify-between'>
+        <div className='bg-primario-500 pb-1 px-6 pt-3 lg:px-8 hidden lg:flex lg:justify-between'>
             <div className='flex justify-between w-28 text-white'>
                 <a href="#facebook"><SlSocialFacebook className='h-6 w-6'/></a>
                 <a href="#insta"><SlSocialInstagram className='h-6 w-6'/></a>
                 <a href="#wp"><ImWhatsapp className='h-6 w-6'/></a>
             </div>
-            <CartWidget cantidad="0" widget="block"/>
+            <CartWidget cantidad="6" widget="block"/>
             <a href="#" className="flex text-white text-sm font-semibold leading-7">
                 <HiUserCircle className='h-7 w-7'/>
             </a>
@@ -47,12 +52,12 @@ export default function Barra() {
         <div className="px-6 py-3 lg:px-8 ">
             <nav className="flex items-center justify-between" aria-label="Global">
                 <div className="flex lg:flex-1">
-                    <a href="#" className="-m-1.5 p-1.5">
-                        <span className="sr-only">MALKA</span>
-                        <img className="w-[100px] overflow-hidden" src={Logo} alt="MALKA" />
-                    </a>
+                    <NavLink to={'/'} className="-m-1.5 p-1.5">
+                            <span className="sr-only">MALKA</span>
+                            <img className="w-[100px] overflow-hidden shadow-md shadow-gray-500" src={Logo} alt="MALKA" />
+                    </NavLink>
                 </div>
-                <CartWidget cantidad="0" widget="hidden"/>
+                <CartWidget cantidad="9" widget="hidden"/>
                 {/* Boton hamburguesa */}
                 <div className="flex lg:hidden">
                     <button
@@ -66,10 +71,12 @@ export default function Barra() {
                 </div>
                 {/* Opciones del nav */}
                 <div className="hidden lg:flex lg:gap-x-12">
-                    <a href="#Inicio" className="text-sm font-semibold leading-6 text-gray-900">Inicio</a>
+                    <NavLink to={'/'} className="uppercase text-sm font-semibold leading-6 text-gray-900">
+                        Inicio
+                    </NavLink>
                     <Menu as="div" className="relative inline-block text-left">
                         <div>
-                            <Menu.Button className="inline-flex text-sm font-semibold leading-6 text-gray-900">
+                            <Menu.Button className="uppercase inline-flex text-sm font-semibold leading-6 text-gray-900">
                                 Productos
                             </Menu.Button>
                         </div>
@@ -83,70 +90,26 @@ export default function Barra() {
                         leaveTo="transform opacity-0 scale-95"
                         >
                             <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                                <div className="px-1 py-1 ">
-                                    <Menu.Item>
-                                        {({ active }) => (
-                                            <NavLink to={'/category/Calza'}>
-                                                <button
-                                                    className={`${
-                                                    active ? 'bg-violet-500 text-white' : 'text-gray-900'
-                                                    } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                                                >
-                                                Edit
-                                                </button>
-                                            </NavLink>
-                                            
-                                        )}
-                                    </Menu.Item>
-                                    <Menu.Item>
-                                        {({ active }) => (
-                                            <button
-                                                className={`${
-                                                active ? 'bg-violet-500 text-white' : 'text-gray-900'
-                                                } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                                            >
-                                                Duplicate
-                                            </button>
-                                        )}
-                                    </Menu.Item>
-                                </div>
-                                <div className="px-1 py-1">
-                                    <Menu.Item>
-                                        {({ active }) => (
-                                            <button
-                                                className={`${
-                                                active ? 'bg-violet-500 text-white' : 'text-gray-900'
-                                                } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                                            >
-                                                Archive
-                                            </button>
-                                        )}
-                                    </Menu.Item>
-                                    <Menu.Item>
-                                        {({ active }) => (
-                                            <button
-                                                className={`${
-                                                active ? 'bg-violet-500 text-white' : 'text-gray-900'
-                                                } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                                            >
-                                                Move
-                                            </button>
-                                        )}
-                                    </Menu.Item>
-                                </div>
-                                <div className="px-1 py-1">
-                                    <Menu.Item>
-                                        {({ active }) => (
-                                            <button
-                                                className={`${
-                                                active ? 'bg-violet-500 text-white' : 'text-gray-900'
-                                                } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                                            >
-                                                Delete
-                                            </button>
-                                        )}
-                                    </Menu.Item>
-                                </div>
+                                {categorias.map((ropa)=>{
+                                    return(
+                                        <div key={ropa} className="px-1 py-1 ">
+                                            <Menu.Item>
+                                                {({ active }) => (
+                                                    <NavLink to={`/category/${ropa}`}>
+                                                        <button
+                                                            className={`${
+                                                            active ? 'bg-violet-500 text-white' : 'text-gray-900'
+                                                            } group flex w-full items-center rounded-md px-2 py-2 text-sm uppercase`}
+                                                        >
+                                                        {ropa}
+                                                        </button>
+                                                    </NavLink>
+                                                    
+                                                )}
+                                            </Menu.Item>
+                                        </div>
+                                    )
+                                })}
                             </Menu.Items>
                         </Transition>
                     </Menu>
@@ -164,7 +127,7 @@ export default function Barra() {
                         <span className="sr-only">MALKA</span>
                         <img className="w-[100px]" src={Logo} alt="MALKA" />
                     </a>
-                    <CartWidget cantidad="0"/>
+                    <CartWidget cantidad="9"/>
                     <button
                         type="button"
                         className="-m-2.5 rounded-md p-2.5 text-gray-700"
@@ -177,13 +140,14 @@ export default function Barra() {
                 <div className="mt-6 flow-root">
                     <div className="-my-6 divide-y divide-gray-500/10">
                     <div className="w-full space-y-2 py-6">
-                        <a
-                            href="#Inicio"
-                            className="-mx-3 flex rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900"
-                        ><HiHome className="text-primario-700 h-6 w-6 mr-2"/><p>Inicio</p></a>
+                        <NavLink to={'/'} className="-mx-3 flex rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 uppercase">
+                                <HiHome className="text-primario-700 h-6 w-6 mr-2"/>
+                                <p>Inicio</p>
+                        </NavLink>
+                        
                         <Menu as="div" className="w-full inline-block text-left">
                         <div className='w-full '>
-                            <Menu.Button className="w-full py-3 rounded-lg inline-flex text-base font-semibold leading-7 text-gray-900">
+                            <Menu.Button className="w-full py-3 rounded-lg inline-flex text-base font-semibold leading-7 text-gray-900 uppercase">
                                 <GiClothes className="text-primario-700 h-6 w-6 mr-2"/> <p>Productos</p>
                             </Menu.Button>
                         </div>
@@ -197,32 +161,26 @@ export default function Barra() {
                         leaveTo="transform opacity-0 scale-95"
                         >
                             <Menu.Items className=" w-56 origin-top-right divide-y divide-gray-400 rounded-md bg-transparent shadow-lg ring-2 ring-black ring-opacity-10 focus:outline-none">
-                                <div className="px-1 py-1 ">
-                                    <Menu.Item>
-                                        {({ active }) => (
-                                            <button
-                                                className={`${
-                                                active ? 'bg-violet-500 text-black' : 'text-gray-900'
-                                                } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                                            >
-                                                Edit
-                                            </button>
-                                        )}
-                                    </Menu.Item>
-                                </div>
-                                <div className="px-1 py-1 ">
-                                    <Menu.Item>
-                                        {({ active }) => (
-                                            <button
-                                                className={`${
-                                                active ? 'bg-violet-500 text-black' : 'text-gray-900'
-                                                } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                                            >
-                                                Edit
-                                            </button>
-                                        )}
-                                    </Menu.Item>
-                                </div>
+                                {categorias.map((ropa)=>{
+                                        return(
+                                            <div key={ropa} className="px-1 py-1 ">
+                                                <Menu.Item>
+                                                    {({ active }) => (
+                                                        <NavLink to={`/category/${ropa}`}>
+                                                            <button
+                                                                className={`${
+                                                                active ? 'bg-violet-500 text-white' : 'text-gray-900'
+                                                                } group flex w-full items-center rounded-md px-2 py-2 text-sm uppercase`}
+                                                            >
+                                                            {ropa}
+                                                            </button>
+                                                        </NavLink>
+                                                        
+                                                    )}
+                                                </Menu.Item>
+                                            </div>
+                                        )
+                                    })}
                             </Menu.Items>
                         </Transition>
                     </Menu>
