@@ -11,7 +11,7 @@ function Root() {
   return (
     <>
       <barraNav/>
-      <itemListContainer isRoute={isRoute} IDcategoria={params.id}/>
+      <itemListContainer isRoute={isRoute} idCategoria={params.id}/>
       <piePag/>
     </>
   )

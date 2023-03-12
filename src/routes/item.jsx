@@ -10,7 +10,7 @@ export default function ItemRoot() {
     return (
         <>
             <barraNav/>
-            <itemDetailContainer IDcategoria={params.id} categoria={params.category}/>
+            <itemDetailContainer idCategoria={params.id} categoria={params.category}/>
             <piePag/>
         </>
     )
