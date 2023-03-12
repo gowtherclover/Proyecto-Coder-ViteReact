@@ -4,7 +4,7 @@ import PiePag from '../components/footer'
 
 import { useParams } from 'react-router-dom'
 
-export default function App() {
+export default function Root() {
   const params = useParams()
   const isRoute = Boolean (params.id)
   

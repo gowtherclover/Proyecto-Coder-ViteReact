@@ -4,17 +4,17 @@ import {createBrowserRouter,RouterProvider,} from "react-router-dom";
 import './index.css'
 
 //RUTAS DE IMPORTACION
-import App from './routes/app'
+import Root from './routes/root'
 import ItemRoot from './routes/items';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
+    element: <Root/>,
   },
   {
     path: "/category/:id",
-    element: <App/>,
+    element: <Root/>,
   },
   {
     path: "/item/:category/:id",
