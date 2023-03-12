@@ -2,7 +2,7 @@ import { useState } from "react";
 import { AiOutlineStar, AiTwotoneStar } from "react-icons/ai";
 
 
-export default function ItemDetail ({detalles}){
+export default function itemDetail ({detalles}){
 
     const [like,setLike] = useState("text-terciario-500")
     

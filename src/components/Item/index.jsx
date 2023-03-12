@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { AiOutlineStar,AiTwotoneStar } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
 
-export default function Item ({datos}){
+export default function itemCard ({datos}){
     const {img,tipo,modelo,precio,id} = datos
 
     return(

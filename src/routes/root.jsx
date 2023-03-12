@@ -1,6 +1,6 @@
-import Barra from '../components/navBar'
-import ItemListContainer from '../components/itemListContainer'
-import Footer from '../components/footer'
+import barraNav from '../components/navBar'
+import itemListContainer from '../components/itemListContainer'
+import piePag from '../components/footer'
 
 import { useParams } from 'react-router-dom'
 
@@ -10,9 +10,9 @@ function Root() {
   
   return (
     <>
-      <Barra/>
-      <ItemListContainer isRoute={isRoute} IDcategoria={params.id}/>
-      <Footer/>
+      <barraNav/>
+      <itemListContainer isRoute={isRoute} IDcategoria={params.id}/>
+      <piePag/>
     </>
   )
 }

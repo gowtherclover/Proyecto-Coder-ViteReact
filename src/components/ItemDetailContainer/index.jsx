@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
-import ItemDetail from "../itemDetail"
+import itemDetail from "../itemDetail"
 
-export default function ItemDetailContainer ({IDcategoria,categoria}){
+export default function itemDetailContainer ({IDcategoria,categoria}){
     const [item,setItem]=useState([])
 
     useEffect(()=>{
@@ -22,7 +22,7 @@ export default function ItemDetailContainer ({IDcategoria,categoria}){
 
     return(
         <main className="bg-terciario-200 container-fluid pt-16 lg:pt-32">
-            <ItemDetail detalles={item}/>
+            <itemDetail detalles={item}/>
         </main>
     )
 }

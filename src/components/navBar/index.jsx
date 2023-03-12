@@ -8,9 +8,9 @@ import { SlSocialFacebook,SlSocialInstagram } from "react-icons/sl";
 import { ImWhatsapp } from "react-icons/im";
 import { NavLink } from 'react-router-dom';
 
-import Logo from '/assets/img/logo-malka.png'
+import logo from '/assets/img/logo-malka.png'
 
-export default function Barra() {
+export default function barraNav() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const [verNav,setVerNav]=useState("show")
     const [buscar,setBuscar]=useState('')
@@ -54,7 +54,7 @@ export default function Barra() {
                 <div className="flex lg:flex-1">
                     <NavLink to={'/'} className="-m-1.5 p-1.5">
                             <span className="sr-only">MALKA</span>
-                            <img className="w-[100px] overflow-hidden shadow-md shadow-gray-500" src={Logo} alt="MALKA" />
+                            <img className="w-[100px] overflow-hidden shadow-md shadow-gray-500" src={logo} alt="MALKA" />
                     </NavLink>
                 </div>
                 <CartWidget cantidad="9" widget="hidden"/>
@@ -125,7 +125,7 @@ export default function Barra() {
                 <div className="flex items-center justify-between">
                     <a href="#" className="-m-1.5 p-1.5">
                         <span className="sr-only">MALKA</span>
-                        <img className="w-[100px]" src={Logo} alt="MALKA" />
+                        <img className="w-[100px]" src={logo} alt="MALKA" />
                     </a>
                     <CartWidget cantidad="9"/>
                     <button

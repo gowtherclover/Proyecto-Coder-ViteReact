@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import ItemCard from "../itemList"
+import itemList from "../itemList"
 
 export default function ItemListContainer ({IDcategoria,isRoute}){
 
@@ -25,7 +25,7 @@ export default function ItemListContainer ({IDcategoria,isRoute}){
     },[IDcategoria]) 
     return(
         <main className="bg-terciario-100 container-fluid pb-8 pt-16 lg:pt-32">
-            <ItemCard productos={products}/>
+            <itemList productos={products}/>
         </main>
     )
 }

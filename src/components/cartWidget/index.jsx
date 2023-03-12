@@ -24,7 +24,7 @@ const products = [
     },
 ]
 
-export default function CartWidget({cantidad,widget}){
+export default function cartWidget({cantidad,widget}){
 
     const [open, setOpen] = useState(false)
 

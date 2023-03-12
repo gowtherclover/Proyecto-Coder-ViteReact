@@ -3,7 +3,7 @@ import Logo from '/assets/img/logo-malka.png'
 import { SlSocialFacebook,SlSocialInstagram } from "react-icons/sl";
 import { ImWhatsapp } from "react-icons/im";
 
-export default function Footer(){
+export default function piePag(){
 
     return(
         <footer className="relative bg-white pt-8 pb-6">
