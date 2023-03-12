@@ -1,4 +1,4 @@
-import ItemCard from "../yitem";
+import ItemCard from "../item";
 export default function ItemList({productos}){
 
     return(
