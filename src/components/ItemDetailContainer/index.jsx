@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import itemDetail from "../itemDetail"
 
-export default function itemDetailContainer ({IDcategoria,categoria}){
+export default function itemDetailContainer ({idCategoria,categoria}){
     const [item,setItem]=useState([])
 
     useEffect(()=>{
@@ -10,7 +10,7 @@ export default function itemDetailContainer ({IDcategoria,categoria}){
                 .then((res)=>res.json())
                 .then((data)=>{
                     const itemFiltered = data.find(
-                        (product)=>{return product.id==IDcategoria && product.tipo==categoria})
+                        (product)=>{return product.id==idCategoria && product.tipo==categoria})
                             
                     setItem(itemFiltered)
                     
