@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
-import itemList from "../itemList"
+import ItemList from "../itemList"
 
-export default function ItemListContainer ({idCategoria,isRoute}){
+export default function itemListContainer ({idCategoria,isRoute}){
 
     const [products,setProducts]=useState([])
 
@@ -25,7 +25,7 @@ export default function ItemListContainer ({idCategoria,isRoute}){
     },[idCategoria]) 
     return(
         <main className="bg-terciario-100 container-fluid pb-8 pt-16 lg:pt-32">
-            <itemList productos={products}/>
+            <ItemList productos={products}/>
         </main>
     )
 }

@@ -10,7 +10,7 @@ import { NavLink } from 'react-router-dom';
 
 import logo from '/assets/img/logo-malka.png'
 
-export default function barraNav() {
+export default function BarraNav() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const [verNav,setVerNav]=useState("show")
     const [buscar,setBuscar]=useState('')
