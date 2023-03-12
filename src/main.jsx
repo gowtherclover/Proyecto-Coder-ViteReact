@@ -5,7 +5,7 @@ import './index.css'
 
 //RUTAS DE IMPORTACION
 import App from './routes/app'
-import ItemRoot from './routes/item';
+import ItemRoot from './routes/items';
 
 const router = createBrowserRouter([
   {
