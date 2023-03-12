@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import ItemDetail from "../ItemDetail"
+import ItemDetail from "../itemDetail"
 
 export default function ItemDetailContainer ({IDcategoria,categoria}){
     const [item,setItem]=useState([])
