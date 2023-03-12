@@ -1,5 +1,5 @@
 import BarraNav from '../components/navBar'
-import ItemListContainer from '../components/itemListContainer'
+import ItemListContainer from '../components/itemListContain'
 import PiePag from '../components/footer'
 
 import { useParams } from 'react-router-dom'

@@ -1,5 +1,5 @@
 import ItemCard from "../item";
-export default function itemList({productos}){
+export default function ItemList({productos}){
 
     return(
         <>
