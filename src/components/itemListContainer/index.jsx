@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import ItemCard from "../ItemList"
+import ItemCard from "../itemList"
 
 export default function ItemListContainer ({IDcategoria,isRoute}){
 

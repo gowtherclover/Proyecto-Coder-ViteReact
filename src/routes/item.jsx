@@ -1,5 +1,5 @@
-import Barra from '../components/NavBar'
-import ItemDetailContainer from '../components/ItemDetailContainer'
+import Barra from '../components/navBar'
+import ItemDetailContainer from '../components/itemDetailContainer'
 import Footer from '../components/footer'
 
 import { useParams } from 'react-router-dom'
