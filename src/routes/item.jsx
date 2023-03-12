@@ -1,17 +1,17 @@
-import barraNav from '../components/navBar'
-import itemDetailContainer from '../components/itemDetailContainer'
-import piePag from '../components/footer'
+import BarraNav from '../components/navBar'
+import ItemDetailContainer from '../components/itemDetailContainer'
+import PiePag from '../components/footer'
 
 import { useParams } from 'react-router-dom'
 
-export default function ItemRoot() {
+export default function itemRoot() {
     const params = useParams()
 
     return (
         <>
-            <barraNav/>
-            <itemDetailContainer idCategoria={params.id} categoria={params.category}/>
-            <piePag/>
+            <BarraNav/>
+            <ItemDetailContainer idCategoria={params.id} categoria={params.category}/>
+            <PiePag/>
         </>
     )
 }
