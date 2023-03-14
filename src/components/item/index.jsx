@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-import { AiOutlineStar,AiTwotoneStar } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
 
 export default function itemCard ({datos}){

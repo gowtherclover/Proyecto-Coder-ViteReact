@@ -11,7 +11,7 @@ export default function Root() {
   return (
     <>
       <BarraNav/>
-      <ItemListContainer isRoute={isRoute} idCategoria={params.id}/>
+      <ItemListContainer isRoute={isRoute} categoria={params.id}/>
       <PiePag/>
     </>
   )

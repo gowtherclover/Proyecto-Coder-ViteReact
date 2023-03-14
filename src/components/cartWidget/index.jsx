@@ -122,7 +122,7 @@ export default function cartWidget({cantidad,widget}){
                                                                     <div className="flex">
                                                                     <button
                                                                         type="button"
-                                                                        className="font-medium text-indigo-600 hover:text-indigo-500"
+                                                                        className="font-medium text-primario-600 hover:text-primario-500"
                                                                     >
                                                                         Eliminar
                                                                     </button>
@@ -144,7 +144,7 @@ export default function cartWidget({cantidad,widget}){
                                                 <div className="mt-6">
                                                     <a
                                                     href="#"
-                                                    className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+                                                    className="flex items-center justify-center rounded-md border border-transparent bg-primario-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-primario-700"
                                                     >
                                                     Ir a finalizar compra
                                                     </a>
@@ -153,7 +153,7 @@ export default function cartWidget({cantidad,widget}){
                                                     <p>
                                                         <button
                                                             type="button"
-                                                            className="font-medium text-indigo-600 hover:text-indigo-500"
+                                                            className="font-medium text-primario-600 hover:text-primario-500"
                                                             onClick={() => setOpen(false)}
                                                         >
                                                             Continuar comprando

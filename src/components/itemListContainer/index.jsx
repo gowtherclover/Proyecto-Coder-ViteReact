@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import ItemList from "../itemList"
 
-export default function itemListContainer ({idCategoria,isRoute}){
+export default function itemListContainer ({categoria,isRoute}){
 
     const [products,setProducts]=useState([])
 
@@ -12,7 +12,7 @@ export default function itemListContainer ({idCategoria,isRoute}){
                 .then((data)=>{
                     if (isRoute) {
                         const productsFiltered = data.filter(
-                            (product)=>product.tipo == idCategoria)
+                            (product)=>product.tipo == categoria)
                             
                             setProducts(productsFiltered)
                     }
@@ -22,7 +22,7 @@ export default function itemListContainer ({idCategoria,isRoute}){
                 .catch((error)=>console.log(error))
         },2000)
             
-    },[idCategoria]) 
+    },[categoria]) 
     return(
         <main className="bg-terciario-100 container-fluid pb-8 pt-16 lg:pt-32">
             <ItemList productos={products}/>
