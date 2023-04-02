@@ -6,7 +6,7 @@ import { ImWhatsapp } from "react-icons/im";
 export default function piePag(){
 
     return(
-        <footer className="relative bg-white pt-8 pb-6">
+        <footer className="relative bg-white pb-6">
             <hr className='border-gray-400 pt-4'/>
             <div className="container mx-auto px-4">
                 <div className="flex flex-wrap text-left lg:text-left">

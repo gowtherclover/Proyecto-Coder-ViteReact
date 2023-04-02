@@ -1,7 +1,8 @@
 import { Dialog, Transition } from "@headlessui/react";
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import {GiShoppingBag} from "react-icons/gi";
 import { HiOutlineX} from "react-icons/hi";
+import { useCartContext } from "../../context/CartContext";
 
 const products = [
     {
@@ -24,9 +25,10 @@ const products = [
     },
 ]
 
-export default function cartWidget({cantidad,widget}){
+export default function cartWidget({widget}){
 
     const [open, setOpen] = useState(false)
+    const [prop,setProp]=useState("hidden")
 
     function abrirModal() {
         setOpen(true);
@@ -35,6 +37,11 @@ export default function cartWidget({cantidad,widget}){
     function cerrarModal() {
         setOpen(false);
     }
+
+    const{cantidades,carrito,eliminarRopa,vaciarCarrito,contador,sumarCantidad,restarCantidad}= useCartContext()
+    useEffect(()=>{
+        contador==0 ? setProp("hidden"):setProp("show")
+    }) 
 
     return(
         <div className={`lg:${widget} relative`}>
@@ -46,8 +53,9 @@ export default function cartWidget({cantidad,widget}){
                 <span className="sr-only">Carrito</span>
                 <GiShoppingBag className="text-primario-700 h-7 w-7 lg:text-white" aria-hidden="true" />
             </button>
-            <div className="items-center absolute -top-2 left-6 inline-flex rounded-full h-5 w-auto bg-terciario-900 text-white px-1.5">
-                <span>{cantidad}</span>
+            
+            <div className={`${prop} items-center absolute -top-2 left-6 inline-flex rounded-full h-5 w-auto bg-terciario-900 text-white px-1.5`}>
+                <span>{contador}</span>
             </div>
 
             <Transition.Root show={open} as={Fragment}>
@@ -96,12 +104,12 @@ export default function cartWidget({cantidad,widget}){
                                                 <div className="mt-8">
                                                     <div className="flow-root">
                                                         <ul role="list" className="-my-6 divide-y divide-gray-200">
-                                                            {products.map((product) => (
+                                                            {carrito.map((product) => (
                                                             <li key={product.id} className="flex py-6">
                                                                 <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                                                                 <img
-                                                                    src={product.img}
-                                                                    alt={`${product.tipo}-${product.modelo}`}
+                                                                    src={product.imagen}
+                                                                    alt={`${product.nombre}`}
                                                                     className="h-full w-full object-cover object-center"
                                                                 />
                                                                 </div>
@@ -110,11 +118,12 @@ export default function cartWidget({cantidad,widget}){
                                                                 <div>
                                                                     <div className="flex justify-between text-base font-medium text-gray-900">
                                                                     <h3>
-                                                                        {product.tipo} {product.modelo}
+                                                                        {product.nombre}
                                                                     </h3>
+                                                                    <button onClick={()=>sumarCantidad(product)}>➕</button>
+                                                                    <button onClick={()=>restarCantidad(product)}>➖</button>
                                                                     <p className="ml-4">$ {product.precio}</p>
                                                                     </div>
-                                                                    <p className="mt-1 text-sm text-gray-500">{product.modelo}</p>
                                                                 </div>
                                                                 <div className="flex flex-1 items-end justify-between text-sm">
                                                                     <p className="text-gray-500">Cantidad: {product.cantidad}</p>

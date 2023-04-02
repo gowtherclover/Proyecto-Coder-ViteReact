@@ -9,13 +9,25 @@ import { ImWhatsapp } from "react-icons/im";
 import { NavLink } from 'react-router-dom';
 
 import logo from '/assets/img/logo-malka.png'
+import { collection, getDocs, getFirestore } from 'firebase/firestore';
 
 export default function BarraNav() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const [verNav,setVerNav]=useState("show")
     const [buscar,setBuscar]=useState('')
+    const [categorias,setCategorias]=useState([])
 
-    const categorias=['Calza','Conjunto','Biker','Capri'];
+    useEffect(()=>{
+        const db = getFirestore()
+        const itemsCollection = collection(db, 'categories')
+
+        getDocs(itemsCollection)
+        .then((snapshot)=>{
+            const docs = snapshot.docs
+            setCategorias(docs.map((doc)=>({id:doc.id, ...doc.data()} )))
+
+        }).catch((error)=>console.log(error))
+    },[])
 
     const handleChange = (event) => {
         setBuscar(event.target.value);
@@ -24,7 +36,7 @@ export default function BarraNav() {
     let scrollPosc = window.pageYOffset;
 
     useEffect(()=>{
-        window.onscroll = function() {
+        function scroll() {
             let actualScrollPosc = window.pageYOffset;
             if (scrollPosc > actualScrollPosc) {
                 setVerNav("show")
@@ -32,19 +44,23 @@ export default function BarraNav() {
                 setVerNav("hidden")
             }
             scrollPosc = actualScrollPosc
-        } 
+        }
+        
+        window.addEventListener('scroll',scroll)
+
+        return ()=>window.removeEventListener('scroll',scroll)
     },[])
 
 
     return (
-    <div className={`isolate bg-white fixed inset-x-0 top-0 ${verNav} z-10`}>
+    <header className={`isolate bg-white fixed inset-x-0 top-0 ${verNav} z-10`}>
         <div className='bg-primario-500 pb-1 px-6 pt-3 lg:px-8 hidden lg:flex lg:justify-between'>
             <div className='flex justify-between w-28 text-white'>
                 <a href="#facebook"><SlSocialFacebook className='h-6 w-6'/></a>
                 <a href="#insta"><SlSocialInstagram className='h-6 w-6'/></a>
                 <a href="#wp"><ImWhatsapp className='h-6 w-6'/></a>
             </div>
-            <CartWidget cantidad="6" widget="block"/>
+            <CartWidget widget="block"/>
             <a href="#" className="flex text-white text-sm font-semibold leading-7">
                 <HiUserCircle className='h-7 w-7'/>
             </a>
@@ -57,7 +73,7 @@ export default function BarraNav() {
                             <img className="w-[100px] overflow-hidden shadow-md shadow-gray-500" src={logo} alt="MALKA" />
                     </NavLink>
                 </div>
-                <CartWidget cantidad="9" widget="hidden"/>
+                <CartWidget widget="hidden"/>
                 {/* Boton hamburguesa */}
                 <div className="flex lg:hidden">
                     <button
@@ -92,16 +108,17 @@ export default function BarraNav() {
                             <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                                 {categorias.map((ropa)=>{
                                     return(
-                                        <div key={ropa} className="px-1 py-1 ">
+                                        <div key={ropa.key} className="px-1 py-1 ">
                                             <Menu.Item>
                                                 {({ active }) => (
-                                                    <NavLink to={`/category/${ropa}`}>
+                                                    <NavLink to={`/category/${ropa.nombre}`}>
                                                         <button
+                                                            onClick={() => setMobileMenuOpen(false)}
                                                             className={`${
                                                             active ? 'bg-primario-500 text-white' : 'text-gray-900'
                                                             } group flex w-full items-center rounded-md px-2 py-2 text-sm uppercase`}
                                                         >
-                                                        {ropa}
+                                                        {ropa.nombre}
                                                         </button>
                                                     </NavLink>
                                                     
@@ -127,7 +144,7 @@ export default function BarraNav() {
                         <span className="sr-only">MALKA</span>
                         <img className="w-[100px]" src={logo} alt="MALKA" />
                     </a>
-                    <CartWidget cantidad="9"/>
+                    <CartWidget />
                     <button
                         type="button"
                         className="-m-2.5 rounded-md p-2.5 text-gray-700"
@@ -163,16 +180,17 @@ export default function BarraNav() {
                             <Menu.Items className=" w-56 origin-top-right divide-y divide-gray-400 rounded-md bg-transparent shadow-lg ring-2 ring-black ring-opacity-10 focus:outline-none">
                                 {categorias.map((ropa)=>{
                                         return(
-                                            <div key={ropa} className="px-1 py-1 ">
+                                            <div key={ropa.key} className="px-1 py-1 ">
                                                 <Menu.Item>
                                                     {({ active }) => (
-                                                        <NavLink to={`/category/${ropa}`}>
+                                                        <NavLink to={`/category/${ropa.nombre}`}>
                                                             <button
+                                                                onClick={() => setMobileMenuOpen(false)}
                                                                 className={`${
                                                                 active ? 'bg-primario-500 text-white' : 'text-gray-900'
                                                                 } group flex w-full items-center rounded-md px-2 py-2 text-sm uppercase`}
                                                             >
-                                                            {ropa}
+                                                            {ropa.nombre}
                                                             </button>
                                                         </NavLink>
                                                         
@@ -203,6 +221,6 @@ export default function BarraNav() {
             </Dialog>
         </div>
         <hr className='border-gray-400'/>
-    </div>
+    </header>
     )
 }
