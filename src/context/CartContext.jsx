@@ -1,13 +1,18 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 const CartContext = createContext();
 
 export const useCartContext = () =>useContext(CartContext);
 
 export function CartContextProvider({children}) {
-    const [carrito,setCarrito]=useState([])
-    console.log(carrito);
-    const existe = (ropa)=>carrito.some(buscar=>buscar.id === ropa.id);
+    const [precioT,setPrecioT]=useState(0)
+    const [carrito,setCarrito]=useState(() => {
+        const datos = localStorage.getItem('carrito');
+        return datos ? JSON.parse(datos) : []})
+    
+    useEffect(() => {
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+    }, [carrito]);
 
     const agregarRopa=(ropa,cantidad)=>{
         if (cantidad==null) {
@@ -56,7 +61,9 @@ export function CartContextProvider({children}) {
         /* let indice = carrito.findIndex((elemento)=>{if(elemento.id === ropa.id){return true}}) */
     }
 
-    let contador = carrito.length
+    let contador = carrito.reduce((acumulador,elemento)=>acumulador + (elemento.cantidad),0)
+
+    let precioTotal= carrito.reduce((acumulador,elemento)=>acumulador + (elemento.precio * elemento.cantidad),0)
 
     return <CartContext.Provider 
     value={{
@@ -68,6 +75,7 @@ export function CartContextProvider({children}) {
         contador,
         sumarCantidad,
         restarCantidad,
+        precioTotal,
         }}>
             
         {children}

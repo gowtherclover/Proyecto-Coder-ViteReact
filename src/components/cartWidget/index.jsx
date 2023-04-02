@@ -4,29 +4,7 @@ import {GiShoppingBag} from "react-icons/gi";
 import { HiOutlineX} from "react-icons/hi";
 import { useCartContext } from "../../context/CartContext";
 
-const products = [
-    {
-        id:8,
-        tipo:"Conjunto",
-        img:"/assets/img/shorts/conjunto-rojo.png",
-        modelo:"Night Fire",
-        descripcion:"Este conjunto deportivo de mujer está diseñado para mantener el estilo y la comodidad en todo momento. El top negro de tirantes anchos ofrece un soporte óptimo durante cualquier actividad física, mientras que el short rojo con detalles en gris proporciona una gran libertad de movimiento. El material de alta calidad es suave al tacto y transpirable, lo que mantiene la piel fresca y seca incluso durante los entrenamientos más intensos. El diseño elegante y moderno de este conjunto deportivo lo convierte en una excelente opción para cualquier actividad deportiva, desde el gimnasio hasta el campo de entrenamiento. Además, su combinación de colores negro, rojo y gris lo hace muy versátil y fácil de combinar con otros accesorios deportivos. ¡Este conjunto es una excelente elección para las mujeres que buscan comodidad y estilo en su ropa deportiva!",
-        precio:6500,
-        cantidad:2
-    },
-    {
-        id:4,
-        tipo:"Calza",
-        img:"/assets/img/calzas/calza-negra.png",
-        modelo:"Wild Spots",
-        descripcion:"La calza Wild Spots presenta un estampado vibrante y lleno de energía. Con manchas de color gris y amarillo, esta prenda te garantiza un look moderno y desenfadado. Su diseño ajustado se adapta a tu figura para brindarte la máxima comodidad y libertad de movimiento durante tus entrenamientos o actividades diarias. El tejido suave y elástico de alta calidad te proporciona una sensación de suavidad y frescura en la piel, mientras que su cintura elástica se ajusta perfectamente a tu cintura para brindarte un ajuste seguro. Con la calza Wild Spots, puedes estar segura de que lucirás a la moda y cómoda al mismo tiempo.",
-        precio:5200,
-        cantidad:1
-    },
-]
-
 export default function cartWidget({widget}){
-
     const [open, setOpen] = useState(false)
     const [prop,setProp]=useState("hidden")
 
@@ -38,7 +16,7 @@ export default function cartWidget({widget}){
         setOpen(false);
     }
 
-    const{cantidades,carrito,eliminarRopa,vaciarCarrito,contador,sumarCantidad,restarCantidad}= useCartContext()
+    const{cantidades,carrito,eliminarRopa,vaciarCarrito,contador,sumarCantidad,restarCantidad,precioTotal}= useCartContext()
     useEffect(()=>{
         contador==0 ? setProp("hidden"):setProp("show")
     }) 
@@ -130,6 +108,7 @@ export default function cartWidget({widget}){
 
                                                                     <div className="flex">
                                                                     <button
+                                                                        onClick={()=>eliminarRopa(product)}
                                                                         type="button"
                                                                         className="font-medium text-primario-600 hover:text-primario-500"
                                                                     >
@@ -144,11 +123,11 @@ export default function cartWidget({widget}){
                                                     </div>
                                                 </div>
                                             </div>
-
+                                            <button onClick={()=>vaciarCarrito()}>Vaciar</button>
                                             <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
                                                 <div className="flex justify-between text-base font-medium text-gray-900">
                                                     <p>Subtotal</p>
-                                                    <p>$ xxx.xxx</p>
+                                                    <p>{`$ ${precioTotal}`}</p>
                                                 </div>
                                                 <div className="mt-6">
                                                     <a
