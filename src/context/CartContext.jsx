@@ -5,7 +5,6 @@ const CartContext = createContext();
 export const useCartContext = () =>useContext(CartContext);
 
 export function CartContextProvider({children}) {
-    const [precioT,setPrecioT]=useState(0)
     const [carrito,setCarrito]=useState(() => {
         const datos = localStorage.getItem('carrito');
         return datos ? JSON.parse(datos) : []})
@@ -57,25 +56,25 @@ export function CartContextProvider({children}) {
 
     const vaciarCarrito = ()=>{setCarrito([])};
 
-    const cantidades = () =>{
-        /* let indice = carrito.findIndex((elemento)=>{if(elemento.id === ropa.id){return true}}) */
-    }
-
     let contador = carrito.reduce((acumulador,elemento)=>acumulador + (elemento.cantidad),0)
 
     let precioTotal= carrito.reduce((acumulador,elemento)=>acumulador + (elemento.precio * elemento.cantidad),0)
+
+    let buscar = stock.filter(elemento =>{
+        return setCarrito(elemento.tipo.includes(filtro.toLowerCase()) || elemento.color.includes(filtro.toLowerCase()) || elemento.talle.includes(filtro.toUpperCase()))
+    })
 
     return <CartContext.Provider 
     value={{
         agregarRopa,
         eliminarRopa,
         vaciarCarrito,
-        cantidades,
         carrito,
         contador,
         sumarCantidad,
         restarCantidad,
         precioTotal,
+        buscar,
         }}>
             
         {children}

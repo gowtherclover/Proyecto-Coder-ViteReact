@@ -133,7 +133,7 @@ export default function BarraNav() {
                     
                 </div>
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <input className=" rounded-full block w-60 bg-gray-300 py-4 pl-4 pr-12 text-slate-900 placeholder:text-slate-600 sm:text-sm sm:leading-6" placeholder="Buscar..." aria-label="Buscar ropa" type="text" value={buscar} onChange={handleChange}/>
+                    <input className=" rounded-full block w-60 bg-gray-300 py-4 pl-4 pr-12 text-slate-900 placeholder:text-slate-600 sm:text-sm sm:leading-6" placeholder="Buscar..." aria-label="Buscar ropa" type="text" value={buscar} onChange={()=>buscar()}/>
                 </div>
             </nav>
             {/* Modo movil */}

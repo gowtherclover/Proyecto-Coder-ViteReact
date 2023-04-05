@@ -16,7 +16,7 @@ export default function cartWidget({widget}){
         setOpen(false);
     }
 
-    const{cantidades,carrito,eliminarRopa,vaciarCarrito,contador,sumarCantidad,restarCantidad,precioTotal}= useCartContext()
+    const{carrito,eliminarRopa,vaciarCarrito,contador,sumarCantidad,restarCantidad,precioTotal}= useCartContext()
     useEffect(()=>{
         contador==0 ? setProp("hidden"):setProp("show")
     }) 

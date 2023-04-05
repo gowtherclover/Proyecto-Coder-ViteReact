@@ -4,11 +4,18 @@ import PiePag from '../components/footer'
 import { CartContextProvider } from '../context/CartContext'
 
 
-import { useParams } from 'react-router-dom'
+import { useLocation, useParams } from 'react-router-dom'
+import { useEffect } from 'react'
 
 export default function itemRoot() {
 
     const params = useParams()
+
+    const {pathname}=useLocation()
+
+    useEffect(()=>{
+        window.scrollTo(0,0)
+    },[pathname])
 
     return (
         <CartContextProvider>
