@@ -10,12 +10,14 @@ import { NavLink } from 'react-router-dom';
 
 import logo from '/assets/img/logo-malka.png'
 import { collection, getDocs, getFirestore } from 'firebase/firestore';
+import { useProdContext } from '../../context/ProdContext';
 
 export default function BarraNav() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const [verNav,setVerNav]=useState("show")
-    const [buscar,setBuscar]=useState('')
     const [categorias,setCategorias]=useState([])
+
+    const {buscar}=useProdContext()
 
     useEffect(()=>{
         const db = getFirestore()
@@ -29,8 +31,10 @@ export default function BarraNav() {
         }).catch((error)=>console.log(error))
     },[])
 
-    const handleChange = (event) => {
-        setBuscar(event.target.value);
+    const handleChange= (event)=>{
+        const input = event.target.value
+        console.log(input);
+        buscar(input)
     }
 
     let scrollPosc = window.pageYOffset;
@@ -133,7 +137,7 @@ export default function BarraNav() {
                     
                 </div>
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <input className=" rounded-full block w-60 bg-gray-300 py-4 pl-4 pr-12 text-slate-900 placeholder:text-slate-600 sm:text-sm sm:leading-6" placeholder="Buscar..." aria-label="Buscar ropa" type="text" value={buscar} onChange={()=>buscar()}/>
+                    <input className=" rounded-full block w-60 bg-gray-300 py-4 pl-4 pr-12 text-slate-900 placeholder:text-slate-600 sm:text-sm sm:leading-6" placeholder="Buscar..." aria-label="Buscar ropa" type="text" onChange={handleChange}/>
                 </div>
             </nav>
             {/* Modo movil */}
@@ -204,8 +208,8 @@ export default function BarraNav() {
                     </Menu>
 
                     </div>
-                    <div className='pb-4 border-none'>
-                        <input className="rounded-full block w-full bg-gray-300 py-4 pl-4 pr-12 text-slate-900 placeholder:text-slate-600 sm:text-sm sm:leading-6" placeholder="Buscar..." aria-label="Buscar ropa" type="text" value={buscar} onChange={handleChange}/>
+                    <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+                        <input className=" rounded-full block w-60 bg-gray-300 py-4 pl-4 pr-12 text-slate-900 placeholder:text-slate-600 sm:text-sm sm:leading-6" placeholder="Buscar..." aria-label="Buscar ropa" type="text" onChange={handleChange}/>
                     </div>
                     <div className="py-6">
                         <a

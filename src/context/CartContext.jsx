@@ -1,3 +1,4 @@
+import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
 import { createContext, useContext, useEffect, useState } from "react";
 
 const CartContext = createContext();
@@ -7,8 +8,9 @@ export const useCartContext = () =>useContext(CartContext);
 export function CartContextProvider({children}) {
     const [carrito,setCarrito]=useState(() => {
         const datos = localStorage.getItem('carrito');
-        return datos ? JSON.parse(datos) : []})
-    
+        return datos ? JSON.parse(datos) : []
+    })
+
     useEffect(() => {
         localStorage.setItem('carrito', JSON.stringify(carrito));
     }, [carrito]);
@@ -60,10 +62,6 @@ export function CartContextProvider({children}) {
 
     let precioTotal= carrito.reduce((acumulador,elemento)=>acumulador + (elemento.precio * elemento.cantidad),0)
 
-    let buscar = stock.filter(elemento =>{
-        return setCarrito(elemento.tipo.includes(filtro.toLowerCase()) || elemento.color.includes(filtro.toLowerCase()) || elemento.talle.includes(filtro.toUpperCase()))
-    })
-
     return <CartContext.Provider 
     value={{
         agregarRopa,
@@ -74,7 +72,6 @@ export function CartContextProvider({children}) {
         sumarCantidad,
         restarCantidad,
         precioTotal,
-        buscar,
         }}>
             
         {children}

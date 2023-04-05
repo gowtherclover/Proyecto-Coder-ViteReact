@@ -2,6 +2,7 @@ import BarraNav from '../components/navBar'
 import ItemDetailContainer from '../components/itemDetailContainer'
 import PiePag from '../components/footer'
 import { CartContextProvider } from '../context/CartContext'
+import { ProdContextProvider } from '../context/prodContext'
 
 
 import { useLocation, useParams } from 'react-router-dom'
@@ -18,10 +19,12 @@ export default function itemRoot() {
     },[pathname])
 
     return (
-        <CartContextProvider>
-            <BarraNav/>
-            <ItemDetailContainer idCategoria={params.id}/>
-            <PiePag/>
-        </CartContextProvider>
+        <ProdContextProvider>
+            <CartContextProvider>
+                <BarraNav/>
+                <ItemDetailContainer idCategoria={params.id}/>
+                <PiePag/>
+            </CartContextProvider>
+        </ProdContextProvider>
     )
 }
