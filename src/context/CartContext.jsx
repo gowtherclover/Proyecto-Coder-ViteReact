@@ -1,4 +1,4 @@
-import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
+import { addDoc, collection, doc, getFirestore, updateDoc } from "firebase/firestore";
 import { createContext, useContext, useEffect, useState } from "react";
 
 const CartContext = createContext();
@@ -10,6 +10,8 @@ export function CartContextProvider({children}) {
         const datos = localStorage.getItem('carrito');
         return datos ? JSON.parse(datos) : []
     })
+
+    const db = getFirestore()
 
     useEffect(() => {
         localStorage.setItem('carrito', JSON.stringify(carrito));
@@ -56,15 +58,43 @@ export function CartContextProvider({children}) {
         return setCarrito(eliminarRopa)
     };
 
-    const vaciarCarrito = ()=>{setCarrito([])};
+    const vaciarCarrito = ()=>{
+        setCarrito([])
+    };
 
     let contador = carrito.reduce((acumulador,elemento)=>acumulador + (elemento.cantidad),0)
 
     let precioTotal= carrito.reduce((acumulador,elemento)=>acumulador + (elemento.precio * elemento.cantidad),0)
 
-    return <CartContext.Provider 
-    value={{
-        agregarRopa,
+    function actualizarOrden(productID,stockFinal) {
+        const item = doc(db,'items',productID)
+        updateDoc(item,{stock: stockFinal})
+    }
+
+    function enviarOrden() {
+        
+        const order = {
+            buyer:{name:'Enzo', mail:'aguilare@fecovita.com',phone: '123456789'},
+            items:carrito,
+            total:precioTotal,
+        }
+    
+        const collectionRef = collection (db,'orders')
+
+        addDoc(collectionRef,order)
+        .then((res)=>{
+            const orderID = res.id
+            alert(orderID)
+            carrito.map((producto)=>{
+                const stockFinal = producto.stock - producto.cantidad
+                actualizarOrden(producto.id,stockFinal)
+                vaciarCarrito()
+            })
+        })
+        .catch((error) => console.log({error}))
+    }
+
+    return <CartContext.Provider value={{agregarRopa,
         eliminarRopa,
         vaciarCarrito,
         carrito,
@@ -72,7 +102,7 @@ export function CartContextProvider({children}) {
         sumarCantidad,
         restarCantidad,
         precioTotal,
-        }}>
+        enviarOrden,}}>
             
         {children}
     </CartContext.Provider>

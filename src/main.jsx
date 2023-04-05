@@ -6,6 +6,7 @@ import './index.css'
 //RUTAS DE IMPORTACION
 import Root from './routes/root'
 import ItemRoot from './routes/items';
+import Cart from './routes/cart';
 
 import { initializeApp } from "firebase/app";
 
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/cart",
-    element: <div>Hello world!</div>,
+    element: <Cart/>,
   },
   {
     path: "/checkout",

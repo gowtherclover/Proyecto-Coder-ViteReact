@@ -9,10 +9,10 @@ export function ProdContextProvider({children}) {
     const [productos,setProductos]=useState([])
     const [originalProd,setOriginalProd]=useState([])
 
+    const db = getFirestore()
+    const itemsCollection = collection(db, 'items')
+
     const AllProducts=()=>{
-        const db = getFirestore()
-        const itemsCollection = collection(db, 'items')
-        
         getDocs(itemsCollection)
         .then((snapshot)=>{
             const docs = snapshot.docs
@@ -23,8 +23,6 @@ export function ProdContextProvider({children}) {
     }
 
     const filtroCategoria=(categoria)=>{
-        const db = getFirestore()
-        const itemsCollection = collection(db, 'items')
         const q = query(itemsCollection, where('categoria', '==' , categoria))
         
         getDocs(q)

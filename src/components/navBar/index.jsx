@@ -33,7 +33,6 @@ export default function BarraNav() {
 
     const handleChange= (event)=>{
         const input = event.target.value
-        console.log(input);
         buscar(input)
     }
 

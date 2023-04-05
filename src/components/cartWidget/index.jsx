@@ -3,6 +3,8 @@ import { Fragment, useEffect, useState } from "react";
 import {GiShoppingBag} from "react-icons/gi";
 import { HiOutlineX} from "react-icons/hi";
 import { useCartContext } from "../../context/CartContext";
+import {collection,getFirestore,addDoc,doc,updateDoc} from 'firebase/firestore'
+import { NavLink } from "react-router-dom";
 
 export default function cartWidget({widget}){
     const [open, setOpen] = useState(false)
@@ -16,7 +18,8 @@ export default function cartWidget({widget}){
         setOpen(false);
     }
 
-    const{carrito,eliminarRopa,vaciarCarrito,contador,sumarCantidad,restarCantidad,precioTotal}= useCartContext()
+    const{carrito,eliminarRopa,vaciarCarrito,contador,sumarCantidad,restarCantidad,precioTotal,enviarOrden,}= useCartContext()
+
     useEffect(()=>{
         contador==0 ? setProp("hidden"):setProp("show")
     }) 
@@ -130,12 +133,11 @@ export default function cartWidget({widget}){
                                                     <p>{`$ ${precioTotal}`}</p>
                                                 </div>
                                                 <div className="mt-6">
-                                                    <a
-                                                    href="#"
+                                                    <NavLink to={'/cart'}
                                                     className="flex items-center justify-center rounded-md border border-transparent bg-primario-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-primario-700"
                                                     >
                                                     Ir a finalizar compra
-                                                    </a>
+                                                    </NavLink>
                                                 </div>
                                                 <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
                                                     <p>
