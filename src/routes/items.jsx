@@ -2,7 +2,7 @@ import BarraNav from '../components/navBar'
 import ItemDetailContainer from '../components/itemDetailContainer'
 import PiePag from '../components/footer'
 import { CartContextProvider } from '../context/CartContext'
-import { ProdContextProvider } from '../context/prodContext'
+import { ProdContextProvider } from '../context/ProdContext'
 
 
 import { useLocation, useParams } from 'react-router-dom'
