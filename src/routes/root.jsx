@@ -4,6 +4,7 @@ import PiePag from '../components/footer'
 import { CartContextProvider } from '../context/CartContext'
 
 import { useLocation, useParams } from 'react-router-dom'
+import { useEffect } from 'react'
 
 
 export default function Root() {
