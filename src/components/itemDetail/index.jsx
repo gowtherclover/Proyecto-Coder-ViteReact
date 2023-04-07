@@ -85,6 +85,7 @@ export default function ItemDetail ({detalles}){
                     </div>
         
                     <button
+                        onClick={()=>agregarRopa(detalles)}
                         type="submit"
                         className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-secundario-500 transition-all duration-300 hover:bg-secundario-600 px-8 py-3 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-secundario-500 focus:ring-offset-2"
                     >
