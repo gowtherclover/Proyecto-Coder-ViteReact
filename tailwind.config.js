@@ -39,7 +39,7 @@ export default {
                     '800': '#2c2b2a',
                     '900': '#1a1a1b',
                 },
-            }
+            },
         },
         screens:{
             'xs':'425px',

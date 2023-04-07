@@ -37,7 +37,7 @@ export default function BarraNav() {
 
     return (
     <header className={`isolate bg-white fixed inset-x-0 top-0 z-10`}>
-        <div className='bg-primario-500 pb-1 px-6 pt-3 lg:px-8 hidden lg:flex lg:justify-between'>
+        <div className='bg-gradient-to-t from-primario-600 to-primario-400 pb-1 px-6 pt-3 lg:px-8 hidden lg:flex lg:justify-between'>
             <div className='flex justify-between w-28 text-white'>
                 <a href="#facebook"><SlSocialFacebook className='h-6 w-6'/></a>
                 <a href="#insta"><SlSocialInstagram className='h-6 w-6'/></a>
