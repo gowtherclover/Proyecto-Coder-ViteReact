@@ -62,7 +62,9 @@ export default function ItemDetail ({detalles}){
                         </div>
                         <div className="flex">
                         <span className="title-font font-medium text-2xl text-gray-900">{`$ ${detalles.precio}`}</span>
-                        <button className="flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded" onClick={()=>agregarRopa(detalles)}>Comprar</button>
+                        {detalles.stock==0?
+                        <button className=" flex ml-auto text-white bg-gray-400 border-0 py-2 px-6 focus:outline-none rounded">No Disponible</button>:
+                        <button className="flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded" onClick={()=>agregarRopa(detalles)}>Comprar</button>}
                         </div>
                     </div>
                 </div>

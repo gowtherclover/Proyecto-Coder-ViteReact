@@ -14,7 +14,6 @@ import { useProdContext } from '../../context/ProdContext';
 
 export default function BarraNav() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-    const [verNav,setVerNav]=useState("show")
     const [categorias,setCategorias]=useState([])
 
     const {buscar}=useProdContext()
@@ -36,27 +35,8 @@ export default function BarraNav() {
         buscar(input)
     }
 
-    let scrollPosc = window.pageYOffset;
-
-    useEffect(()=>{
-        function scroll() {
-            let actualScrollPosc = window.pageYOffset;
-            if (scrollPosc > actualScrollPosc) {
-                setVerNav("show")
-            } else {
-                setVerNav("hidden")
-            }
-            scrollPosc = actualScrollPosc
-        }
-        
-        window.addEventListener('scroll',scroll)
-
-        return ()=>window.removeEventListener('scroll',scroll)
-    },[])
-
-
     return (
-    <header className={`isolate bg-white fixed inset-x-0 top-0 ${verNav} z-10`}>
+    <header className={`isolate bg-white fixed inset-x-0 top-0 z-10`}>
         <div className='bg-primario-500 pb-1 px-6 pt-3 lg:px-8 hidden lg:flex lg:justify-between'>
             <div className='flex justify-between w-28 text-white'>
                 <a href="#facebook"><SlSocialFacebook className='h-6 w-6'/></a>
