@@ -1,6 +1,6 @@
 import { NavLink, useNavigate } from "react-router-dom"
 import { useCartContext } from "../../context/CartContext"
-import ItemCart from "../cart"
+import ItemCart from "../cartItem"
 export default function cartList({productos}){
     const {enviarOrden} = useCartContext()
     const navigate = useNavigate();
@@ -15,16 +15,21 @@ export default function cartList({productos}){
     }
 
     return(
-        <div className="grid justify-items-center grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-[repeat(auto-fit,minmax(220px,1fr))] mx-4 mt-4 xs:mx-none gap-7">
-            {productos.map((prod)=>{
-                return(
-                <ItemCart datos={prod} key={prod.id}/>
-                )
-            })}
+        <>
+            <div className="grid grid-cols-1 mx-auto mt-4 gap-3 w-4/5 sm:w-3/5">
+                {productos.map((prod)=>{
+                    return(
+                    <ItemCart datos={prod} key={prod.id}/>
+                    )
+                })}
 
-            <button onClick={Compra} className="bg-terciario-700">
-                    comprar todo
-            </button>
-        </div>
+                <button onClick={Compra} className="bg-terciario-500 hover:bg-terciario-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:translate-y-1">
+                    Finalizar compra
+                </button>
+
+            </div>
+            
+
+        </>
     )
 } 
