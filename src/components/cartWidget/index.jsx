@@ -3,7 +3,8 @@ import { Fragment, useEffect, useState } from "react";
 import {GiShoppingBag} from "react-icons/gi";
 import { HiOutlineX} from "react-icons/hi";
 import { useCartContext } from "../../context/CartContext";
-import {collection,getFirestore,addDoc,doc,updateDoc} from 'firebase/firestore'
+import { FaPlus, FaMinus, FaTrash  } from 'react-icons/fa';
+
 import { NavLink } from "react-router-dom";
 
 export default function cartWidget({widget}){
@@ -96,29 +97,30 @@ export default function cartWidget({widget}){
                                                                 </div>
 
                                                                 <div className="ml-4 flex flex-1 flex-col">
-                                                                <div>
-                                                                    <div className="flex justify-between text-base font-medium text-gray-900">
-                                                                    <h3>
-                                                                        {product.nombre}
-                                                                    </h3>
-                                                                    <button onClick={()=>sumarCantidad(product)}>➕</button>
-                                                                    <button onClick={()=>restarCantidad(product)}>➖</button>
-                                                                    <p className="ml-4">$ {product.precio}</p>
+                                                                    <div>
+                                                                        <div className="flex justify-between text-base font-medium text-gray-900 uppercase">
+                                                                        <h3>
+                                                                            {product.nombre}
+                                                                        </h3>
+                                                                        <p className="ml-4">$ {product.precio}</p>
+                                                                        </div>
                                                                     </div>
-                                                                </div>
-                                                                <div className="flex flex-1 items-end justify-between text-sm">
-                                                                    <p className="text-gray-500">Cantidad: {product.cantidad}</p>
-
-                                                                    <div className="flex">
-                                                                    <button
-                                                                        onClick={()=>eliminarRopa(product)}
-                                                                        type="button"
-                                                                        className="font-medium text-primario-600 hover:text-primario-500"
-                                                                    >
-                                                                        Eliminar
-                                                                    </button>
+                                                                    <div className="flex flex-1 items-center justify-between text-sm pt-4">
+                                                                        <p className="text-gray-500">Cantidad: {product.cantidad}</p>
+                                                                        <div className="flex flex-row gap-5">
+                                                                            <button onClick={()=>sumarCantidad(product)} className="hover:bg-green-200 hover:rounded-full p-1"><FaPlus /></button>
+                                                                            <button onClick={()=>restarCantidad(product)} className="hover:bg-red-200 hover:rounded-full p-1"><FaMinus /></button>
+                                                                        </div>
+                                                                        <div className="flex">
+                                                                        <button
+                                                                            onClick={()=>eliminarRopa(product)}
+                                                                            type="button"
+                                                                            className="font-medium text-red-500 hover:text-red-700 hover:bg-red-200 hover:rounded-full p-1"
+                                                                        >
+                                                                            Eliminar
+                                                                        </button>
+                                                                        </div>
                                                                     </div>
-                                                                </div>
                                                                 </div>
                                                             </li>
                                                             ))}
@@ -126,7 +128,13 @@ export default function cartWidget({widget}){
                                                     </div>
                                                 </div>
                                             </div>
-                                            <button onClick={()=>vaciarCarrito()}>Vaciar</button>
+                                            <div className="inline-flex justify-center items-center text-center ">
+                                                <button onClick={()=>{vaciarCarrito();setOpen(false)}} 
+                                                    className="inline-flex justify-center items-center text-center w-3/5 py-2 mb-4 border border-gray-300 rounded-md font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primario-500">
+                                                    <FaTrash className="mr-2" />
+                                                    Vaciar carrito
+                                                </button>
+                                            </div>
                                             <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
                                                 <div className="flex justify-between text-base font-medium text-gray-900">
                                                     <p>Subtotal</p>

@@ -20,7 +20,7 @@ export default function itemListContainer ({categoria,isRoute}){
 
     },[categoria])
     return(
-        <main className="bg-terciario-100 container-fluid pb-8 pt-16 lg:pt-32">
+        <main className="bg-primario-100 container-fluid pb-8 pt-16 lg:pt-32">
             { productos.length!=0?<ItemList productos={productos}/>:
             <PuffLoader color="#9c292d" className="mx-auto mt-28 mb-28" size={250}/>}
         </main>
