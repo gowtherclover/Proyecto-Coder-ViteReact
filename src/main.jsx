@@ -7,6 +7,7 @@ import './index.css'
 import Root from './routes/root'
 import ItemRoot from './routes/items';
 import Cart from './routes/cart';
+import Checkout from './routes/checkout';
 
 import { initializeApp } from "firebase/app";
 
@@ -40,7 +41,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/checkout",
-    element: <div>Hello world!</div>,
+    element: <Checkout/>,
   },
 ]);
 

@@ -83,14 +83,19 @@ export default function ItemDetail ({detalles}){
                             </a>
                         </div>
                     </div>
-        
+                    {detalles.stock==0?
+                        <button
+                        className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-terciario-500 transition-all duration-300 hover:bg-terciario-600 px-8 py-3 text-base font-medium text-white focus:outline-none"
+                    >
+                        No disponible
+                    </button>:
                     <button
                         onClick={()=>agregarRopa(detalles)}
                         type="submit"
                         className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-secundario-500 transition-all duration-300 hover:bg-secundario-600 px-8 py-3 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-secundario-500 focus:ring-offset-2"
                     >
                         Agregar al carrito
-                    </button>
+                    </button>}
                 </div>
             </div>
         </div>

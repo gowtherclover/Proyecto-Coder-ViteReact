@@ -1,7 +1,7 @@
 import { NavLink, useNavigate } from "react-router-dom"
 import { useCartContext } from "../../context/CartContext"
 import ItemCart from "../cartItem"
-export default function cartList({productos}){
+export default function cartList({productos,btn}){
     const {enviarOrden} = useCartContext()
     const navigate = useNavigate();
     
@@ -23,9 +23,9 @@ export default function cartList({productos}){
                     )
                 })}
 
-                <button onClick={Compra} className="bg-terciario-500 hover:bg-terciario-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:translate-y-1">
+                <NavLink to={'/checkout'} className={`${btn} bg-terciario-500 hover:bg-terciario-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:translate-y-1`}>
                     Finalizar compra
-                </button>
+                </NavLink>
 
             </div>
             

@@ -71,10 +71,10 @@ export function CartContextProvider({children}) {
         updateDoc(item,{stock: stockFinal})
     }
 
-    function enviarOrden() {
+    function enviarOrden(buyer) {
         
         const order = {
-            buyer:{name:'Enzo', mail:'aguilare@fecovita.com',phone: '123456789'},
+            buyer,
             items:carrito,
             total:precioTotal,
         }
