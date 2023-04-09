@@ -3,7 +3,7 @@ import CartList from "../cartList"
 import { PuffLoader } from "react-spinners"
 import { useCartContext } from "../../context/CartContext";
 
-export default function cartContainer ({categoria,isRoute}){
+export default function cartContainer (){
 
     const {carrito}=useCartContext()
     return(

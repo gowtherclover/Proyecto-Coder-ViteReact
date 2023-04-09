@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 export default function itemCart ({datos}){
     const {imagen,nombre,precio,id,stock,cantidad} = datos
 
-    const{carrito,sumarCantidad,restarCantidad,eliminarRopa}=useCartContext()
+    const{carrito,sumarCantidad,restarCantidad,eliminarRopa,precioTotal}=useCartContext()
     const navigate = useNavigate();
 
     function letrasMayusculas(string) {
@@ -44,26 +44,32 @@ export default function itemCart ({datos}){
     }
 
     return(
-        <div key={id} className={`flex flex-row bg-white p-4 rounded-lg shadow-md animate__animated animate__flipInX animate__delay-1s`}>
-            <img className="w-28 h-28 object-contain mr-4" src={imagen} alt={`${nombre}`}/>
-            <div className="flex-1 border-l border-gray-300 pl-4">
-                <h4 className="text-md font-medium mb-2">{`${letrasMayusculas(nombre)}`}</h4>
-                <p className="text-gray-500 text-sm ">{`Cantidad: ${cantidad}`}</p>
-                <p className="text-gray-500 text-lg font-bold">{`$ ${precio}`}</p>
-                <div className='flex justify-between items-center'>
-                    <div className="flex flex-row gap-5">
-                        <button onClick={()=>sumarCantidad(datos)} className="hover:bg-green-200 hover:rounded-full p-1"><FaPlus /></button>
-                        <button onClick={()=>restar()} className="hover:bg-red-200 hover:rounded-full p-1"><FaMinus /></button>
+        <>
+            <div key={id} className={`flex flex-row bg-white p-4 rounded-lg shadow-md animate__animated animate__flipInX animate__delay-1s`}>
+                <img className="w-28 h-28 object-contain mr-4" src={imagen} alt={`${nombre}`}/>
+                <div className="flex-1 border-l border-gray-300 pl-4">
+                    <h4 className="text-md font-medium mb-2">{`${letrasMayusculas(nombre)}`}</h4>
+                    <p className="text-gray-500 text-sm ">{`Cantidad: ${cantidad}`}</p>
+                    <p className="text-gray-500 text-lg font-bold">{`$ ${precio}`}</p>
+                    <div className='flex justify-between items-center'>
+                        <div className="flex flex-row gap-5">
+                            <button onClick={()=>sumarCantidad(datos)} className="hover:bg-green-200 hover:rounded-full p-1"><FaPlus /></button>
+                            <button onClick={()=>restar()} className="hover:bg-red-200 hover:rounded-full p-1"><FaMinus /></button>
+                        </div>
+                        <button
+                            onClick={()=>eliminar()}
+                            type="button"
+                            className="font-medium text-red-500 hover:text-red-700 hover:bg-red-200 hover:rounded-full p-1"
+                        >
+                            Eliminar
+                        </button>
                     </div>
-                    <button
-                        onClick={()=>eliminar()}
-                        type="button"
-                        className="font-medium text-red-500 hover:text-red-700 hover:bg-red-200 hover:rounded-full p-1"
-                    >
-                        Eliminar
-                    </button>
                 </div>
             </div>
-        </div>
+            <div className="flex justify-between text-base font-medium text-gray-900">
+                <p>Subtotal</p>
+                <p>{`$ ${precioTotal}`}</p>
+            </div>
+        </>
     )
 }
