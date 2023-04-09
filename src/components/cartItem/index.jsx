@@ -2,11 +2,12 @@ import 'animate.css'
 import { useCartContext } from '../../context/CartContext'
 import { FaMinus, FaPlus } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
+import { PuffLoader } from 'react-spinners'
 
 export default function itemCart ({datos}){
     const {imagen,nombre,precio,id,stock,cantidad} = datos
 
-    const{carrito,sumarCantidad,restarCantidad,eliminarRopa,precioTotal}=useCartContext()
+    const{carrito,sumarCantidad,restarCantidad,eliminarRopa}=useCartContext()
     const navigate = useNavigate();
 
     function letrasMayusculas(string) {
@@ -46,7 +47,7 @@ export default function itemCart ({datos}){
     return(
         <>
             <div key={id} className={`flex flex-row bg-white p-4 rounded-lg shadow-md animate__animated animate__flipInX animate__delay-1s`}>
-                <img className="w-28 h-28 object-contain mr-4" src={imagen} alt={`${nombre}`}/>
+                {imagen?<img className="w-28 h-28 object-contain mr-4" src={imagen} alt={`${nombre}`}/>:<PuffLoader color="#9c292d" className="mx-auto my-10" size={100}/>}
                 <div className="flex-1 border-l border-gray-300 pl-4">
                     <h4 className="text-md font-medium mb-2">{`${letrasMayusculas(nombre)}`}</h4>
                     <p className="text-gray-500 text-sm ">{`Cantidad: ${cantidad}`}</p>
@@ -65,10 +66,6 @@ export default function itemCart ({datos}){
                         </button>
                     </div>
                 </div>
-            </div>
-            <div className="flex justify-between text-base font-medium text-gray-900">
-                <p>Subtotal</p>
-                <p>{`$ ${precioTotal}`}</p>
             </div>
         </>
     )
