@@ -12,12 +12,12 @@ import Checkout from './routes/checkout';
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCXiWkBcO1N8ebRPJDUIL0jzzFYf6Kd5MM",
-  authDomain: "ecommerce-malka.firebaseapp.com",
-  projectId: "ecommerce-malka",
-  storageBucket: "ecommerce-malka.appspot.com",
-  messagingSenderId: "53008726126",
-  appId: "1:53008726126:web:ac5cb604bbd25016054e7f"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId
 };
 
 const app = initializeApp(firebaseConfig);
@@ -46,7 +46,7 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  //<React.StrictMode>
+  <React.StrictMode>
       <RouterProvider router={router} />
-  //</React.StrictMode>,
+  </React.StrictMode>,
 )

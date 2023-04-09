@@ -1,6 +1,6 @@
 import CartWidget from '../cartWidget';
 
-import { Fragment, useEffect, useRef, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { Dialog,Menu,Transition  } from '@headlessui/react'
 import { HiOutlineMenu,HiOutlineX,HiHome,HiUserCircle } from "react-icons/hi";
 import { GiClothes } from "react-icons/gi";

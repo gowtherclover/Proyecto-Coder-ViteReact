@@ -1,5 +1,5 @@
 import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 const ProdContext = createContext();
 

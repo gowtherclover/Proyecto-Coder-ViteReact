@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import 'animate.css'
 import { useCartContext } from '../../context/CartContext';
 import {useNavigate } from 'react-router-dom';
 
@@ -48,13 +49,13 @@ export default function CheckoutList({ carrito }) {
       <div className="flex flex-wrap -mx-4 -mb-8">
         <div className="w-full lg:w-1/2 px-4 mb-8">
           <h2 className="text-2xl font-medium mb-4">Información de envío</h2>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className='bg-white p-5 rounded-lg shadow-xl animate__animated animate__flipInX animate__delay-1s'>
             <div className="mb-4">
               <label className="block text-gray-700 font-medium mb-2" htmlFor="nombreCompleto">
                 Nombre completo
               </label>
               <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow-xl appearance-none border-2 focus:border-primario-400-2 focus:border-primario-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="nombreCompleto"
                 type="text"
                 placeholder="Nombre completo"
@@ -67,7 +68,7 @@ export default function CheckoutList({ carrito }) {
                 Número de teléfono
               </label>
               <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow-xl appearance-none border-2 focus:border-primario-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="telefono"
                 type="tel"
                 placeholder="Número de teléfono"
@@ -81,7 +82,7 @@ export default function CheckoutList({ carrito }) {
                 Correo electrónico
               </label>
               <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow-xl appearance-none border-2 focus:border-primario-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="email"
                 type="email"
                 placeholder="Correo electrónico"
@@ -93,7 +94,7 @@ export default function CheckoutList({ carrito }) {
                 Confirmar correo electrónico
               </label>
               <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow-xl appearance-none border-2 focus:border-primario-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="confirmEmail"
                 type="email"
                 placeholder="Confirmar correo electrónico"
@@ -107,7 +108,7 @@ export default function CheckoutList({ carrito }) {
                 Dirección de envío
               </label>
               <textarea
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow-xl appearance-none border-2 focus:border-primario-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="direccion"
                 placeholder="Dirección de envío"
                 onChange={handleChange}
@@ -117,7 +118,7 @@ export default function CheckoutList({ carrito }) {
 
             <button
               type="submit"
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="bg-primario-500 hover:bg-primario-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             >
               Enviar
             </button>
@@ -125,15 +126,6 @@ export default function CheckoutList({ carrito }) {
         </div>
         <div className="w-full lg:w-1/2 px-4 mb-8">
           <h2 className="text-2xl font-medium mb-4">Resumen del pedido</h2>
-          {/* {carrito.map((item) => (
-            <div key={item.id} className="flex mb-4">
-              <img className="w-1/4 h-auto" src={item.imagen} alt={item.nombre} />
-              <div className="ml-4 w-3/4">
-                <h3 className="font-medium">{item.nombre}</h3>
-                <p className="text-gray-700">{item.cantidad} x ${item.precio}</p>
-              </div>
-            </div>
-          ))} */}
           <CartList productos={carrito} btn={'hidden'}/>
         </div>
       </div>

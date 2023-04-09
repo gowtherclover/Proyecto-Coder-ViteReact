@@ -1,8 +1,6 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import ItemList from "../itemList"
 
-import {collection,getDocs, getFirestore,query,where} from 'firebase/firestore'
-import { useParams } from "react-router-dom"
 import { PuffLoader } from "react-spinners"
 import { useProdContext } from "../../context/ProdContext"
 

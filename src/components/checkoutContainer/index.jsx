@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react"
 import CheckoutList from "../checkoutList"
 
 import { PuffLoader } from "react-spinners"

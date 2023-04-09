@@ -4,15 +4,6 @@ import ItemCart from "../cartItem"
 export default function cartList({productos,btn}){
     const {enviarOrden} = useCartContext()
     const navigate = useNavigate();
-    
-    function Compra() {
-            enviarOrden()
-
-            setTimeout(() => {
-                navigate('/');
-            }, 3000);
-        
-    }
 
     return(
         <>
@@ -23,7 +14,7 @@ export default function cartList({productos,btn}){
                     )
                 })}
 
-                <NavLink to={'/checkout'} className={`${btn} bg-terciario-500 hover:bg-terciario-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:translate-y-1`}>
+                <NavLink to={'/checkout'} className={`${btn} text-center bg-terciario-500 hover:bg-terciario-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:translate-y-1`}>
                     Finalizar compra
                 </NavLink>
 

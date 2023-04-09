@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 import 'animate.css'
-import { FaCheckCircle, FaExclamationTriangle, FaTimesCircle } from 'react-icons/fa';
 
 export default function itemCard ({datos}){
     const {imagen,nombre,categoria,precio,id,stock} = datos

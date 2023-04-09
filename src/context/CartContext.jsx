@@ -1,5 +1,9 @@
 import { addDoc, collection, doc, getFirestore, updateDoc } from "firebase/firestore";
 import { createContext, useContext, useEffect, useState } from "react";
+import { AiOutlineFrown, AiOutlineMeh, AiOutlineRest, AiOutlineSmile } from "react-icons/ai";
+
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const CartContext = createContext();
 
@@ -29,14 +33,25 @@ export function CartContextProvider({children}) {
                 actualizarCarrito[indice].cantidad += cantidad;
                 setCarrito(actualizarCarrito)
             }
-            else{
-                console.log("no hay stock");
-            }
         } 
         else {
             const nuevaRopa = {cantidad, ...ropa}
             setCarrito([...carrito, nuevaRopa]);
         }
+
+        toast(<span className="flex justify-between font-bold"><AiOutlineSmile className="text-green-600 w-7 h-7" /> Producto agregado al carrito!</span>, {
+            position: "bottom-center",
+            autoClose: 1000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            style: {
+                backgroundColor: '#bbf7d0'
+            }
+            });
     };
 
     const sumarCantidad = (ropa) => agregarRopa(ropa, 1);
@@ -51,15 +66,56 @@ export function CartContextProvider({children}) {
             actualizarCarrito[indice].cantidad -= 1;
             setCarrito(actualizarCarrito);
         }
+
+        toast(<span className="flex justify-between font-bold"><AiOutlineMeh className="text-yellow-600 w-7 h-7" /> Producto eliminado del carrito!</span>, {
+            position: "bottom-center",
+            autoClose: 1000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            style: {
+                backgroundColor: '#fef08a'
+            }
+            });
     }
 
     const eliminarRopa = (ropa)=>{
         const eliminarRopa=carrito.filter((buscar)=>buscar.id !== ropa.id)
-        return setCarrito(eliminarRopa)
+        toast(<span className="flex justify-between font-bold "><AiOutlineFrown className="text-red-600 w-7 h-7" /> Producto eliminado del carrito</span>, {
+            position: "bottom-center",
+            autoClose: 1000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            style: {
+                backgroundColor: '#fecaca'
+            }
+            });
+        return (setCarrito(eliminarRopa))
     };
 
     const vaciarCarrito = ()=>{
         setCarrito([])
+
+        toast(<span className="flex justify-between font-bold"><AiOutlineRest className="text-red-600 w-7 h-7" /> Carrito vaciado</span>, {
+            position: "bottom-center",
+            autoClose: 1000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            style: {
+                backgroundColor: '#fecaca'
+            }
+            });
     };
 
     let contador = carrito.reduce((acumulador,elemento)=>acumulador + (elemento.cantidad),0)

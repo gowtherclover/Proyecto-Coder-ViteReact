@@ -4,6 +4,9 @@ import {GiShoppingBag} from "react-icons/gi";
 import { HiOutlineX} from "react-icons/hi";
 import { useCartContext } from "../../context/CartContext";
 import { FaPlus, FaMinus, FaTrash  } from 'react-icons/fa';
+import { IoWarningOutline  } from 'react-icons/io5';
+import "animate.css";
+
 
 import { NavLink } from "react-router-dom";
 
@@ -24,7 +27,7 @@ export default function cartWidget({widget}){
     useEffect(()=>{
         contador==0 ? setProp("hidden"):setProp("show")
     }) 
-
+    
     return(
         <div className={`lg:${widget} relative`}>
             <button
@@ -67,6 +70,28 @@ export default function cartWidget({widget}){
                                     leaveTo="translate-x-full"
                                 >
                                     <Dialog.Panel className="pointer-events-auto w-screen max-w-md">
+                                        {carrito.length==0?
+                                        <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
+                                            <div className="flex-1 overflow-y-auto py-6 px-4 sm:px-6 flex flex-col justify-center items-center">
+                                                <div className="flex items-start justify-between w-full">
+                                                    <Dialog.Title className="text-lg font-medium text-gray-900">Carrito</Dialog.Title>
+                                                    <div className="ml-3 flex h-7 items-center">
+                                                        <button
+                                                            type="button"
+                                                            className="-m-2 p-2 text-gray-400 hover:text-gray-500"
+                                                            onClick={() => setOpen(false)}
+                                                        >
+                                                            <span className="sr-only">Cerrar Carrito</span>
+                                                            <HiOutlineX className="h-6 w-6" aria-hidden="true" />
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div className="flex flex-col justify-center items-center text-primario-500 font-bold text-3xl h-full">
+                                                    <span>¡No hay productos!</span>
+                                                    <IoWarningOutline className="mt-10 w-16 h-16 animate__animated animate__shakeX" />
+                                                </div>
+                                            </div>
+                                        </div>:
                                         <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
                                             <div className="flex-1 overflow-y-auto py-6 px-4 sm:px-6">
                                                 <div className="flex items-start justify-between">
@@ -160,7 +185,7 @@ export default function cartWidget({widget}){
                                                     </p>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div>}
                                     </Dialog.Panel>
                                 </Transition.Child>
                             </div>
